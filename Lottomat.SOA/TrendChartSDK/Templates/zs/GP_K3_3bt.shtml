@@ -1,0 +1,208 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+            <th colspan="3" rowspan="2" width="95">开奖号码</th>
+            <th rowspan="2" width="40">和<br />值</th>
+            <th rowspan="2" width="40">跨<br />度</th>
+            <th colspan="20">三不同走势</th>
+            <th colspan="4">三连号走势</th>
+        </tr>
+        <tr>
+            <th width="35">123</th>
+            <th width="35">124</th>
+            <th width="35">125</th>
+            <th width="35">126</th>
+            <th width="35">134</th>
+            <th width="35">135</th>
+            <th width="35">136</th>
+            <th width="35">145</th>
+            <th width="35">146</th>
+            <th width="35">156</th>
+            <th width="35">234</th>
+            <th width="35">235</th>
+            <th width="35">236</th>
+            <th width="35">245</th>
+            <th width="35">246</th>
+            <th width="35">256</th>
+            <th width="35">345</th>
+            <th width="35">346</th>
+            <th width="35">356</th>
+            <th width="35">456</th>
+            <th width="35">123</th>
+            <th width="35">234</th>
+            <th width="35">345</th>
+            <th width="35">456</th>
+
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><span>选号1</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">123</td>
+            <td class="presele-ball" pl="red">124</td>
+            <td class="presele-ball" pl="red">125</td>
+            <td class="presele-ball" pl="red">126</td>
+            <td class="presele-ball" pl="red">134</td>
+            <td class="presele-ball" pl="red">135</td>
+            <td class="presele-ball" pl="red">136</td>
+            <td class="presele-ball" pl="red">145</td>
+            <td class="presele-ball" pl="red">146</td>
+            <td class="presele-ball" pl="red">156</td>
+            <td class="presele-ball" pl="red">234</td>
+            <td class="presele-ball" pl="red">235</td>
+            <td class="presele-ball" pl="red">236</td>
+            <td class="presele-ball" pl="red">245</td>
+            <td class="presele-ball" pl="red">246</td>
+            <td class="presele-ball" pl="red">256</td>
+            <td class="presele-ball" pl="red">345</td>
+            <td class="presele-ball" pl="red">346</td>
+            <td class="presele-ball" pl="red">356</td>
+            <td class="presele-ball" pl="red">456</td>
+            <td class="presele-ball" pl="blue">123</td>
+            <td class="presele-ball" pl="blue">234</td>
+            <td class="presele-ball" pl="blue">345</td>
+            <td class="presele-ball" pl="blue">456</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号2</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">123</td>
+            <td class="presele-ball" pl="red">124</td>
+            <td class="presele-ball" pl="red">125</td>
+            <td class="presele-ball" pl="red">126</td>
+            <td class="presele-ball" pl="red">134</td>
+            <td class="presele-ball" pl="red">135</td>
+            <td class="presele-ball" pl="red">136</td>
+            <td class="presele-ball" pl="red">145</td>
+            <td class="presele-ball" pl="red">146</td>
+            <td class="presele-ball" pl="red">156</td>
+            <td class="presele-ball" pl="red">234</td>
+            <td class="presele-ball" pl="red">235</td>
+            <td class="presele-ball" pl="red">236</td>
+            <td class="presele-ball" pl="red">245</td>
+            <td class="presele-ball" pl="red">246</td>
+            <td class="presele-ball" pl="red">256</td>
+            <td class="presele-ball" pl="red">345</td>
+            <td class="presele-ball" pl="red">346</td>
+            <td class="presele-ball" pl="red">356</td>
+            <td class="presele-ball" pl="red">456</td>
+            <td class="presele-ball" pl="blue">123</td>
+            <td class="presele-ball" pl="blue">234</td>
+            <td class="presele-ball" pl="blue">345</td>
+            <td class="presele-ball" pl="blue">456</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号3</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">123</td>
+            <td class="presele-ball" pl="red">124</td>
+            <td class="presele-ball" pl="red">125</td>
+            <td class="presele-ball" pl="red">126</td>
+            <td class="presele-ball" pl="red">134</td>
+            <td class="presele-ball" pl="red">135</td>
+            <td class="presele-ball" pl="red">136</td>
+            <td class="presele-ball" pl="red">145</td>
+            <td class="presele-ball" pl="red">146</td>
+            <td class="presele-ball" pl="red">156</td>
+            <td class="presele-ball" pl="red">234</td>
+            <td class="presele-ball" pl="red">235</td>
+            <td class="presele-ball" pl="red">236</td>
+            <td class="presele-ball" pl="red">245</td>
+            <td class="presele-ball" pl="red">246</td>
+            <td class="presele-ball" pl="red">256</td>
+            <td class="presele-ball" pl="red">345</td>
+            <td class="presele-ball" pl="red">346</td>
+            <td class="presele-ball" pl="red">356</td>
+            <td class="presele-ball" pl="red">456</td>
+            <td class="presele-ball" pl="blue">123</td>
+            <td class="presele-ball" pl="blue">234</td>
+            <td class="presele-ball" pl="blue">345</td>
+            <td class="presele-ball" pl="blue">456</td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2"><strong>数据统计</strong></th>
+            <th colspan="3" rowspan="2" width="95">开奖号码</th>
+            <th rowspan="2" width="40">和<br />值</th>
+            <th rowspan="2" width="40">跨<br />度</th>
+            <th colspan="20">三不同走势</th>
+            <th colspan="4">三连号走势</th>
+        </tr>
+        <tr>
+            <th width="35">123</th>
+            <th width="35">124</th>
+            <th width="35">125</th>
+            <th width="35">126</th>
+            <th width="35">134</th>
+            <th width="35">135</th>
+            <th width="35">136</th>
+            <th width="35">145</th>
+            <th width="35">146</th>
+            <th width="35">156</th>
+            <th width="35">234</th>
+            <th width="35">235</th>
+            <th width="35">236</th>
+            <th width="35">245</th>
+            <th width="35">246</th>
+            <th width="35">256</th>
+            <th width="35">345</th>
+            <th width="35">346</th>
+            <th width="35">356</th>
+            <th width="35">456</th>
+            <th width="35">123</th>
+            <th width="35">234</th>
+            <th width="35">345</th>
+            <th width="35">456</th>
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>

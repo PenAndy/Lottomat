@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Lottomat.Util.ConfigHelper.GetValue("SystemName").ToString() - 后台管理系统</title>
+    <!--框架必需start-->
+    <script src="~/Content/Scripts/jquery/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/styles/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/scripts/utils/txwl-clientdata.js"></script>
+
+    @System.Web.Optimization.Styles.Render("~/Content/styles/txwl-ui.css")
+    @System.Web.Optimization.Scripts.Render("~/Content/scripts/utils/js")
+    <!--框架必需end-->
+
+    <style type="text/css">
+        .table-content {
+            width: 100%;
+            border: 1px solid gainsboro;
+            line-height: 2
+        }
+
+            .table-content thead tr {
+                border-bottom: 1px solid gainsboro;
+            }
+
+            .table-content thead th {
+                border-left: 1px solid gainsboro;
+                font-size: 14px;
+                text-align: center
+            }
+
+            .table-content tbody tr {
+                border-bottom: 1px solid gainsboro;
+            }
+
+                .table-content tbody tr td {
+                    border-left: 1px solid gainsboro;
+                    text-align: center
+                }
+
+                    .table-content tbody tr td a {
+                        color: red;
+                    }
+    </style>
+
+    <script>
+        var contentPath = '@Url.Content("~")'.substr(0, '@Url.Content("~")'.length - 1);
+        $(function () {
+            InitialPage();
+
+            LoadNotInvestigationData();
+
+            LoadTodaysLotteryData();
+
+        });
+
+        //初始化
+        function InitialPage() {
+            $('#desktop').height($(window).height() - 22);
+            $(window).resize(function (e) {
+                window.setTimeout(function () {
+                    $('#desktop').height($(window).height() - 22);
+                }, 200);
+                e.stopPropagation();
+            });
+        }
+
+        function LoadNotInvestigationData() {
+            $.AjaxRequest({
+                url: "/Home/GetNotInvestigationList",
+                type: "GET",
+                async: false,
+                success: function (req) {
+                    if (req) {
+                        if (req.type == 1) {
+                            var html = '';
+                            var temp = [];
+                            $.each(authorizeMenuData, function (i, data) {
+                                $.each(req.resultdata, function (index, item) {
+                                    if (data.FullName === item.Name) {
+                                        item.Id = data.ModuleId;
+                                        temp.push(item);
+                                    }
+                                });
+                            });
+
+                            $.each(temp, function (index, item) {
+                                html += '<div style="line-height: 39px; border-bottom: 1px solid #ccc;">';
+                                html += '<a href="#" style="text-decoration: none;"><span style="color: red">[待复查]</span>&nbsp;&nbsp;&nbsp;' + item.Name + '第【' + item.Desc + '】期未复查</a>';
+                                html += '<label style="float: right;cursor: pointer" onclick=OpenNav("' + item.Id + '")>点我前往&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i></label>';
+                                html += '</div>';
+                            });
+                            $('#portal-panel-content').html(html);
+                        }
+                    }
+                }
+            });
+        }
+
+        function LoadTodaysLotteryData() {
+            $.AjaxRequest({
+                url: "/Home/GetTodaysLottery",
+                type: "GET",
+                async : false,
+                success: function (req) {
+                    if (req) {
+                        if (req.type == 1) {
+                            var html = '';
+                            var temp = [];
+
+                            var json = eval("(" + req.resultdata + ")");
+                            //console.log(json)
+                            //console.log(authorizeMenuData)
+
+                            $.each(authorizeMenuData, function (i, data) {
+                                $.each(json, function (index, item) {
+                                    if (data.FullName === item.LotteryName) {
+                                        item.Id = data.ModuleId;
+                                        temp.push(item);
+                                    }
+                                });
+                            });
+
+                            var res = $.orderBy(temp, ['OpenTime'], 'asc');
+                            
+                            $.each(res.results, function (index, item) {
+                                //html += '<div style="line-height: 39px; border-bottom: 1px solid #ccc;">';
+                                //html += '<a href="#" style="text-decoration: none;"><span style="color: red">[待复查]</span>&nbsp;&nbsp;&nbsp;' + item.Name + '第【' + item.Desc + '】期未复查</a>';
+                                //html += '<label style="float: right;cursor: pointer" onclick=OpenNav("' + item.Id + '")>点我前往&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i></label>';
+                                //html += '</div>';
+
+                                html += '<tr>';
+                                html += '<td>' + item.LotteryName +'</td>';
+                                html += '<td>' + item.Term +'</td>';
+                                //html += '<td>否</td>';
+                                html += '<td>' + item.OpenTime +'</td>';
+                                html += '<td><a target="_blank" href=' + item.MainUrl +'>参考网站</a></td>';
+                                html += '<td><a href="#" data-name=' + item.LotteryName + ' data-key=' + item.EnumCode +' onclick=OpenNav("' + item.Id + '")>点我前往</a></td>';
+                                html += '</tr>';
+                            });
+                            $('#tbody-content').html(html);
+                        }
+                    }
+                }
+            });
+        }
+
+        //跳转到指定模块菜单
+        function OpenNav(navid) {
+            top.$("#nav").find('a#' + navid).trigger("click");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="border" id="desktop" style="margin: 10px 10px 0 10px; background: #fff; overflow: auto;">
+        <div class="portal-panel">
+
+            <div class="row" style="overflow: hidden; margin-bottom: 10px;">
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-coffee"></i>&nbsp;&nbsp;待复查开奖号彩种
+                    </div>
+                    <div class="portal-panel-content" id="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        @*<div style="line-height: 39px; border-bottom: 1px solid #ccc;">
+                                <a href="#" style="text-decoration: none;"><span style="color: red">[待复查]</span>&nbsp;&nbsp;&nbsp;排列三[第2017326期]</a>
+                                <label style="float: right;cursor: pointer" onclick="OpenNav('0b3f721c3bb546028caf5e4d012aca3f')">点我前往&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-right"></i></label>
+                            </div>*@
+                    </div>
+                </div>
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-bullhorn"></i>&nbsp;&nbsp;今日开奖彩种
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        
+                        @*<div style="line-height: 39px; border-bottom: 1px solid #ccc;">
+                                <a href="#" style="text-decoration: none;">[公告]&nbsp;&nbsp;&nbsp;服务器升级通知</a>
+                                <label style="float: right">2016-06-01</label>
+                            </div>*@
+
+                        <table class="table-content">
+                            <thead>
+                                <tr>
+                                    <th>彩种</th>
+                                    <th>期数</th>
+                                    @*<th>是否加开奖号</th>*@
+                                    <th>开奖时间</th>
+                                    <th>参考网站</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-content">
+
+                                @*<tr>
+                                        <td>福彩3D</td>
+                                        <td>FC3D</td>
+                                        <td>FC3D</td>
+                                        <td>FC3D</td>
+                                        <td>FC3D</td>
+                                        <td><a href="#" data-name="福彩3D" data-key="FC3D" onclick="">点我前往</a></td>
+                                    </tr>*@
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

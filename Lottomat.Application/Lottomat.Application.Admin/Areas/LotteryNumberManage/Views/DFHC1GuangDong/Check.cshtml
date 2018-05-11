@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "校验";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<script>
+    var keyValue = request('keyValue');
+    $(function () {
+        initControl();
+    });
+    //初始化控件
+    function initControl() {
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../LotteryNumberManage/DFHC1GuangDong/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+
+                    showDataInWebControls(data);
+
+                    //$("#form1").SetWebControls(data);
+                }
+            });
+        }
+    }
+
+    //展现数据
+    function showDataInWebControls(data) {
+        //期数
+        $('#Term').val(data["Term"]);
+        //时间
+        $('#OpenTime').val(data["OpenTime"]);
+
+        //开奖号
+        for (var i = 1; i <= 4; i++) {
+            $('#OpenCode' + i).val(data["OpenCode" + i]);
+        }
+    }
+
+    //保存表单;
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }
+        //var postData = $("#form1").GetWebControls(keyValue);
+        var postData = {
+            Term: $('#Term').val(),
+            OpenCode1: $('#OpenCode1').val(),
+            OpenCode2: $('#OpenCode2').val(),
+            OpenCode3: $('#OpenCode3').val(),
+            OpenCode4: $('#OpenCode4').val(),
+            OpenTime: $('#OpenTime').val()
+        };
+
+        $.SaveForm({
+            url: "../../LotteryNumberManage/DFHC1GuangDong/SaveForm?keyValue=" + keyValue + "&isCheck=1",
+            param: postData,
+            loading: "正在保存数据...",
+            success: function () {
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        });
+    }
+
+</script>
+<style type="text/css">
+    .form-control-input {
+        width: 60px;
+        height: 28px;
+        line-height: 2;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 9pt;
+    }
+</style>
+<div style="margin-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <td class="formTitle">期数<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="Term" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">数字：<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="OpenCode1" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value = this.value.replace(/[^0-9]/g, '')" onblur="this.value = this.value.replace(/[^0-9]/g, '')">&nbsp;&nbsp;
+                <span style="color: black;">生肖号：</span>
+                <input id="OpenCode2" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value = this.value.replace(/[^0-9]/g, '')" onblur="this.value = this.value.replace(/[^0-9]/g, '')">&nbsp;&nbsp;
+                <span style="color: black;">季节：</span>
+                <input id="OpenCode3" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value = this.value.replace(/[^0-9]/g, '')" onblur="this.value = this.value.replace(/[^0-9]/g, '')">&nbsp;&nbsp;
+                <span style="color: black;">方位：</span>
+                <input id="OpenCode4" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value = this.value.replace(/[^0-9]/g, '')" onblur="this.value = this.value.replace(/[^0-9]/g, '')">&nbsp;&nbsp;
+            </td>
+        </tr>
+
+        <tr>
+            <td class="formTitle"></td>
+            <td class="formValue" colspan="3">
+                <span style="color: Red;">
+                    1、数字在01-36中取值
+                </span>
+                <br />
+                <span style="color: Red;">
+                    2、生肖对应码值为：鼠[1]、牛[2]、虎[3]、兔[4]、龙[5]、蛇[6]、马[7]、羊[8]、猴[9]、鸡[10]、狗[11]、猪[12]
+                </span>
+                <br />
+                <span style="color: Red;">
+                    3、季节对应码值为：春[1]、夏[2]、秋[3]、冬[4]
+                </span>
+                <br />
+                <span style="color: Red;">
+                    4、方位对应码值为：东[1]、南[2]、西[3]、北[4]
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">开奖时间<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="OpenTime" type="text" class="form-control input-datepicker" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})" isvalid="yes" checkexpession="NotNull" />
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "字典管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyValue = request('keyValue');
+    var itemId = request('itemId');
+    var parentId = request('parentId');
+    $(function () {
+        initControl();
+    })
+    //初始化控件
+    function initControl() {
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../SystemManage/DataItemDetail/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    $("#form1").SetWebControls(data);
+                }
+            });
+        } else {
+            $("#ParentId").val(parentId);
+            $("#ItemId").val(itemId);
+        }
+    }
+    //保存表单
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }
+        var postData = $("#form1").GetWebControls(keyValue);
+        if (postData["ParentId"] == "") {
+            postData["ParentId"] = 0;
+        }
+
+        if (postData["IsHot"] == "1") {
+            postData["IsHot"] = true;
+        } else {
+            postData["IsHot"] = false;
+        }
+        if (postData["IsRecommend"] == "1") {
+            postData["IsRecommend"] = true;
+        } else {
+            postData["IsRecommend"] = false;
+        }
+        if (postData["IsShowHomePage"] == "1") {
+            postData["IsShowHomePage"] = true;
+        } else {
+            postData["IsShowHomePage"] = false;
+        }
+
+        $.SaveForm({
+            url: "../../SystemManage/DataItemDetail/SaveForm?keyValue=" + keyValue,
+            param: postData,
+            loading: "正在保存数据...",
+            success: function () {
+                $.currentIframe().$("#gridTable").resetSelection();
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        })
+    }
+    //验证：项目值、项目名 不能重复
+    function OverrideExistField(id, url) {
+        $.ExistField(id, url, { itemId: itemId });
+    }
+</script>
+<div style="margin-top: 20px; margin-right: 30px;">
+    <input id="ParentId" type="hidden" />
+    <input id="ItemId" type="hidden" />
+    <table class="form">
+        <tr>
+            <td class="formTitle">项目名<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="ItemName" type="text" onblur="OverrideExistField(this.id,'../../SystemManage/DataItemDetail/ExistItemName')" class="form-control" placeholder="请输入项目名" isvalid="yes" checkexpession="NotNull" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">项目值<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="ItemValue" type="text" onblur="OverrideExistField(this.id,'../../SystemManage/DataItemDetail/ExistItemValue')" class="form-control" placeholder="请输入项目值" isvalid="yes" checkexpession="NotNull" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle">简拼</th>
+            <td class="formValue">
+                <input id="SimpleSpelling" type="text" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle">排序<font face="宋体">*</font></th>
+            <td class="formValue">
+                <input id="SortCode" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle" style="height: 37px;">是否有效</th>
+            <td class="formValue">
+                <div class="checkbox">
+                    <label>
+                        <input id="EnabledMark" type="checkbox" checked="checked" />
+                        有效
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle" style="height: 37px;">是否热门</th>
+            <td class="formValue">
+                <div class="checkbox">
+                    <label>
+                        <input id="IsHot" type="checkbox" checked="checked" />
+                        热门
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle" style="height: 37px;">是否推荐</th>
+            <td class="formValue">
+                <div class="checkbox">
+                    <label>
+                        <input id="IsRecommend" type="checkbox" checked="checked" />
+                        推荐
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle" style="height: 37px;">二级页面显示</th>
+            <td class="formValue">
+                <div class="checkbox">
+                    <label>
+                        <input id="IsShowHomePage" type="checkbox" checked="checked" />
+                        显示
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="formTitle" valign="top" style="padding-top: 4px;">备注
+            </th>
+            <td class="formValue">
+                <textarea id="Description" class="form-control" style="height: 70px;"></textarea>
+            </td>
+        </tr>
+    </table>
+</div>
+

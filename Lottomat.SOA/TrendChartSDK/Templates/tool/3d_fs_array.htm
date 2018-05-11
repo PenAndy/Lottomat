@@ -1,0 +1,115 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td class="blue-two half">
+                <ul class="list array rightArray" id="leftul">
+                    <li class="adobeRight">
+                        <input name="chk" type="radio" value="0" checked="checked" id="chk1" class="radio" onclick="checkedOther(this);" /><label for="chk1" class="bold">定位选号</label><br />
+                        选择您的复式号码：
+                    </li>
+                    <li class="ballbox width360">
+                        <span>百位:</span>
+                        <span name="spanbw" id="bw0" class="bigball grey">0</span>
+                        <span name="spanbw" id="bw1" class="bigball grey">1</span>
+                        <span name="spanbw" id="bw2" class="bigball grey">2</span>
+                        <span name="spanbw" id="bw3" class="bigball grey">3</span>
+                        <span name="spanbw" id="bw4" class="bigball grey">4</span>
+                        <span name="spanbw" id="bw5" class="bigball grey">5</span>
+                        <span name="spanbw" id="bw6" class="bigball grey">6</span>
+                        <span name="spanbw" id="bw7" class="bigball grey">7</span>
+                        <span name="spanbw" id="bw8" class="bigball grey">8</span>
+                        <span name="spanbw" id="bw9" class="bigball grey">9</span>
+                        <input type="hidden" name="bw" id="bw" />
+                    </li>
+                    <li class="ballbox width360">
+                        <span>十位:</span>
+                        <span name="spansw" id="sw0" class="bigball grey">0</span>
+                        <span name="spansw" id="sw1" class="bigball grey">1</span>
+                        <span name="spansw" id="sw2" class="bigball grey">2</span>
+                        <span name="spansw" id="sw3" class="bigball grey">3</span>
+                        <span name="spansw" id="sw4" class="bigball grey">4</span>
+                        <span name="spansw" id="sw5" class="bigball grey">5</span>
+                        <span name="spansw" id="sw6" class="bigball grey">6</span>
+                        <span name="spansw" id="sw7" class="bigball grey">7</span>
+                        <span name="spansw" id="sw8" class="bigball grey">8</span>
+                        <span name="spansw" id="sw9" class="bigball grey">9</span>
+                        <input type="hidden" name="sw" id="sw" />
+                    </li>
+                    <li class="ballbox width360">
+                        <span>个位:</span>
+                        <span name="spangw" id="gw0" class="bigball grey">0</span>
+                        <span name="spangw" id="gw1" class="bigball grey">1</span>
+                        <span name="spangw" id="gw2" class="bigball grey">2</span>
+                        <span name="spangw" id="gw3" class="bigball grey">3</span>
+                        <span name="spangw" id="gw4" class="bigball grey">4</span>
+                        <span name="spangw" id="gw5" class="bigball grey">5</span>
+                        <span name="spangw" id="gw6" class="bigball grey">6</span>
+                        <span name="spangw" id="gw7" class="bigball grey">7</span>
+                        <span name="spangw" id="gw8" class="bigball grey">8</span>
+                        <span name="spangw" id="gw9" class="bigball grey">9</span>
+                        <input type="hidden" name="gw" id="gw" />
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-two half">
+                <ul class="list array selected" id="rightul">
+                    <li>
+                        <input name="chk" type="radio" value="1" id="chk2" class="radio" onclick="checkedOther(this);" /><label for="chk2" class="bold">不定位选号</label><br />
+                        选择您的复式号码：
+                    </li>
+                    <li class="ballbox width180">
+                        <span name="spanw" id="w0" class="bigball grey">0</span>
+                        <span name="spanw" id="w1" class="bigball grey">1</span>
+                        <span name="spanw" id="w2" class="bigball grey">2</span>
+                        <span name="spanw" id="w3" class="bigball grey">3</span>
+                        <span name="spanw" id="w4" class="bigball grey">4</span>
+                        <span name="spanw" id="w5" class="bigball grey">5</span>
+                        <span name="spanw" id="w6" class="bigball grey">6</span>
+                        <span name="spanw" id="w7" class="bigball grey">7</span>
+                        <span name="spanw" id="w8" class="bigball grey">8</span>
+                        <span name="spanw" id="w9" class="bigball grey">9</span>
+                        <input type="hidden" name="w" id="w" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one half" colspan="2">
+                <ul class="list zhuhao">
+                    <li class="left">
+                        <span>
+                            <input name="zuhe" type="radio" value="直选" checked="checked" id="zuhe1" onclick="Czuhe('right');" class="radio" /><label for="zuhe1">生成所有直选:</label>
+                        </span><br />
+                        <span>
+                            <input type="radio" name="zuhe" value="组选" id="zuhe2" onclick="Czuhe('right');" class="radio" /><label for="zuhe2">生成所有组选:</label>
+                        </span>
+                    </li>
+                    <li class="right">
+                        <input name="zuhe3" type="checkbox" id="zuhe3" value="组三" checked="checked" />
+                        <label for="zuhe3">
+                            包含组三
+                        </label>
+                        <input name="zuhe6" type="checkbox" id="zuhe6" value="组六" checked="checked" />
+                        <label for="zuhe6">
+                            包含组六
+                        </label>
+                        <input name="baozi" type="checkbox" id="baozi" value="豹子" checked="checked" />
+                        <label for="baozi">
+                            包含豹子
+                        </label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="blue-one" style="width: 100%;">
+                <div class="but_1">
+                    <input type="image" name="imageField" id="imageField" src="/static/images/kszh.gif" />
+                    <input type="image" name="imageField3" id="resetImage" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

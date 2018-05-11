@@ -1,0 +1,173 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td class="blue-one">请选择8到20个红球号码</td>
+            <td class="blue-two both">
+                <ul class="list">
+                    <li class="ballbox width420">
+                        <span type="checkbox" value="0" class="bigball grey-28">01</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">02</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">03</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">04</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">05</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">06</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">07</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">08</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">09</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">10</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">11</span><br>
+                        <span type="checkbox" value="0" class="bigball grey-28">12</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">13</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">14</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">15</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">16</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">17</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">18</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">19</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">20</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">21</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">22</span><br>
+                        <span type="checkbox" value="0" class="bigball grey-28">23</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">24</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">25</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">26</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">27</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">28</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">29</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">30</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">31</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">32</span>
+                        <span type="checkbox" value="0" class="bigball grey-28">33</span>
+                        <input type="hidden" name="FilterName_546" id="FilterName_546" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr><td></td><td></td><td></td></tr>
+
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="blue-one" style="width:100%;">
+                <div class="but_1">
+                    <input type="image" name="imageField" id="imageField" src="/static/images/kszh.gif" onclick="return checkNums();" />
+                    <input type="image" name="imageField3" id="resetImage" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>复式投注与旋转矩阵对比表</h2>
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="finally">
+    <tr height="40" bgcolor="#ededed">
+        <td width="200">号码个数</td>
+        <td width="200">复式注数</td>
+        <td width="200">资金</td>
+        <td width="200">旋转注数</td>
+        <td width="200">资金</td>
+        <td width="200">缩水比例</td>
+    </tr>
+    <tr height="36">
+        <td>8</td>
+        <td><span class="red">28</span></td>
+        <td>56</td>
+        <td><span class="red">4</span></td>
+        <td>8</td>
+        <td> 85.7%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>9</td>
+        <td><span class="red">84</span></td>
+        <td>168</td>
+        <td><span class="red">7</span></td>
+        <td>14</td>
+        <td> 91.7%</td>
+    </tr>
+    <tr height="36">
+        <td>10</td>
+        <td><span class="red">210</span></td>
+        <td>420</td>
+        <td><span class="red">14</span></td>
+        <td>28</td>
+        <td> 93.3%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>11</td>
+        <td><span class="red">462</span></td>
+        <td>924</td>
+        <td><span class="red">25</span></td>
+        <td>50</td>
+        <td> 94.6%</td>
+    </tr>
+    <tr height="36">
+        <td>12</td>
+        <td><span class="red">924</span></td>
+        <td>1848</td>
+        <td><span class="red">44</span></td>
+        <td>88</td>
+        <td> 95.2%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>13</td>
+        <td><span class="red">1716</span></td>
+        <td>3432</td>
+        <td><span class="red">74</span></td>
+        <td>148</td>
+        <td> 95.7%</td>
+    </tr>
+    <tr height="36">
+        <td>14</td>
+        <td><span class="red">3003</span></td>
+        <td>6006</td>
+        <td><span class="red">118</span></td>
+        <td>236</td>
+        <td> 96.1%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>15</td>
+        <td><span class="red">5005</span></td>
+        <td>10010</td>
+        <td><span class="red">174</span></td>
+        <td>348</td>
+        <td> 96.5% </td>
+    </tr>
+    <tr height="36">
+        <td>16</td>
+        <td><span class="red">8008</span></td>
+        <td>16016</td>
+        <td><span class="red">260</span></td>
+        <td>520</td>
+        <td> 96.8%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>17</td>
+        <td><span class="red">12376</span></td>
+        <td>24752</td>
+        <td><span class="red">402</span></td>
+        <td>804</td>
+        <td> 96.8%</td>
+    </tr>
+    <tr height="36">
+        <td>18</td>
+        <td><span class="red">18564</span></td>
+        <td>37128</td>
+        <td><span class="red">569</span></td>
+        <td>1138</td>
+        <td> 96.9%</td>
+    </tr>
+    <tr height="36" bgcolor="#f7f7f7">
+        <td>19</td>
+        <td><span class="red">27132</span></td>
+        <td>54264</td>
+        <td><span class="red">783</span></td>
+        <td>1566</td>
+        <td> 97.1%</td>
+    </tr>
+    <tr height="36">
+        <td>20</td>
+        <td><span class="red">38760</span></td>
+        <td>77520</td>
+        <td><span class="red">1073</span></td>
+        <td>2146</td>
+        <td> 97.2% </td>
+    </tr>
+</table>

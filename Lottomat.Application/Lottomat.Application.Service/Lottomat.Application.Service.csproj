@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6B8ABEA-C923-4605-99A9-B7ACA5DE4D8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottomat.Application.Service</RootNamespace>
+    <AssemblyName>Lottomat.Application.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Lottomat.Application.Service.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountService.cs" />
+    <Compile Include="AttachmentManage\AttachmentService.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeService.T.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeService.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormInstanceService.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormService.cs" />
+    <Compile Include="BaseManage\base_EnterpriseObjService.cs" />
+    <Compile Include="BaseManage\SiteTDKService.cs" />
+    <Compile Include="CommonManage\CommonService.cs" />
+    <Compile Include="GalleryManage\Tk_GalleryDetailService.cs" />
+    <Compile Include="GalleryManage\Tk_GalleryService.cs" />
+    <Compile Include="InformationManage\AdvertisementService.cs" />
+    <Compile Include="InformationManage\ToolsService.cs" />
+    <Compile Include="InformationManage\TrendChartService.cs" />
+    <Compile Include="InformationManage\ZTArticleService.cs" />
+    <Compile Include="InformationManage\ZxNewsService.cs" />
+    <Compile Include="InformationManage\LabelService.cs" />
+    <Compile Include="LotteryNumberManage\AwardsService.cs" />
+    <Compile Include="LotteryNumberManage\DF18x7XinJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DF20x5HeBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DF20x5ZheJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DF22x5HeNanService.cs" />
+    <Compile Include="LotteryNumberManage\DF25x7XinJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DF26x5GuangDongService.cs" />
+    <Compile Include="LotteryNumberManage\DF30x5HuBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DF31x7FuJianService.cs" />
+    <Compile Include="LotteryNumberManage\DF35x7LiaoNingService.cs" />
+    <Compile Include="LotteryNumberManage\DF35x7XinJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DF36x7GuangDongService.cs" />
+    <Compile Include="LotteryNumberManage\DF36x7HeiLongJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DF4J1HaiNanService.cs" />
+    <Compile Include="LotteryNumberManage\DF6J1ZheJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DFDF6J1Service.cs" />
+    <Compile Include="LotteryNumberManage\DFFC25x5AnHuiService.cs" />
+    <Compile Include="LotteryNumberManage\DFHC1GuangDongService.cs" />
+    <Compile Include="LotteryNumberManage\DFHD15x5Service.cs" />
+    <Compile Include="LotteryNumberManage\DFHYC2HeBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DFHYC3HeBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DFKLSCGuangXiService.cs" />
+    <Compile Include="LotteryNumberManage\DFLJFC22x5HeiLongJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DFP62HeiLongJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DFPL5HeBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DFPL7HeBeiService.cs" />
+    <Compile Include="LotteryNumberManage\DFSMHLHCHongKongService.cs" />
+    <Compile Include="LotteryNumberManage\DFSZFCGuangDongService.cs" />
+    <Compile Include="LotteryNumberManage\DFTC22x5FuJianService.cs" />
+    <Compile Include="LotteryNumberManage\DFTC36x7FuJianService.cs" />
+    <Compile Include="LotteryNumberManage\DFTC6J1HeiLongJiangService.cs" />
+    <Compile Include="LotteryNumberManage\DFTC7WSJiangSuService.cs" />
+    <Compile Include="LotteryNumberManage\DFTTCx4ShangHaiService.cs" />
+    <Compile Include="LotteryNumberManage\GP11x5AnHuiService.cs" />
+    <Compile Include="LotteryNumberManage\GP11x5BeiJingService.cs" />
+    <Compile Include="LotteryNumberManage\QGFC3DService.cs" />
+    <Compile Include="LotteryNumberManage\QGFCQLCService.cs" />
+    <Compile Include="LotteryNumberManage\QGFCSSQService.cs" />
+    <Compile Include="LotteryNumberManage\QGTCDLTService.cs" />
+    <Compile Include="LotteryNumberManage\QGTCP3Service.cs" />
+    <Compile Include="LotteryNumberManage\QGTCQXCService.cs" />
+    <Compile Include="OpenCodeManage\BaseServices.cs" />
+    <Compile Include="OpenCodeManage\Open10CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open21CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open3CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open4CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open5CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open7CodeServices.cs" />
+    <Compile Include="OpenCodeManage\Open8CodeServices.cs" />
+    <Compile Include="PublicInfoManage\ResourcesService.cs" />
+    <Compile Include="PublicInfoManage\ScheduleService.cs" />
+    <Compile Include="SystemManage\AppKeyService.cs" />
+    <Compile Include="SystemManage\BaseFriendLinksService.cs" />
+    <Compile Include="SystemManage\FeedbackService.cs" />
+    <Compile Include="SystemManage\InterfaceService.cs" />
+    <Compile Include="SystemManage\LogService.cs" />
+    <Compile Include="PublicInfoManage\FileFolderService.cs" />
+    <Compile Include="PublicInfoManage\FileInfoService.cs" />
+    <Compile Include="PublicInfoManage\EmailCategoryService.cs" />
+    <Compile Include="PublicInfoManage\EmailContentService.cs" />
+    <Compile Include="PublicInfoManage\NewsService.cs" />
+    <Compile Include="PublicInfoManage\NoticeService.cs" />
+    <Compile Include="SystemManage\DataBaseBackupService.cs" />
+    <Compile Include="AuthorizeManage\FilterIPService.cs" />
+    <Compile Include="AuthorizeManage\FilterTimeService.cs" />
+    <Compile Include="SystemManage\DataBaseLinkService.cs" />
+    <Compile Include="SystemManage\DataBaseTableService.cs" />
+    <Compile Include="SystemManage\AreaService.cs" />
+    <Compile Include="AuthorizeManage\ModuleButtonService.cs" />
+    <Compile Include="AuthorizeManage\ModuleColumnService.cs" />
+    <Compile Include="AuthorizeManage\ModuleService.cs" />
+    <Compile Include="AuthorizeManage\PermissionService.cs" />
+    <Compile Include="BaseManage\DepartmentService.cs" />
+    <Compile Include="BaseManage\OrganizeService.cs" />
+    <Compile Include="BaseManage\RoleService.cs" />
+    <Compile Include="BaseManage\UserService.cs" />
+    <Compile Include="BaseManage\PostService.cs" />
+    <Compile Include="BaseManage\JobService.cs" />
+    <Compile Include="BaseManage\UserGroupService.cs" />
+    <Compile Include="SystemManage\DataItemDetailService.cs" />
+    <Compile Include="SystemManage\DataItemService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lottomat.Data\Lottomat.Data.Repository\Lottomat.Data.Repository.csproj">
+      <Project>{1751a2dd-0f00-4c76-b180-97e8f72fe078}</Project>
+      <Name>Lottomat.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lottomat.Data\Lottomat.Data\Lottomat.Data.csproj">
+      <Project>{528f308b-d2cd-4bd1-a94f-bf94abef08d7}</Project>
+      <Name>Lottomat.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lottomat.Util\Lottomat.Util.Extension\Lottomat.Util.Extension.csproj">
+      <Project>{4b7dde80-dfa1-4938-93f8-3721e2c592b9}</Project>
+      <Name>Lottomat.Util.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lottomat.Util\Lottomat.Util.WebControl\Lottomat.Util.WebControl.csproj">
+      <Project>{93f81df7-5a0b-4a13-a90e-8cf7c41955c3}</Project>
+      <Name>Lottomat.Util.WebControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lottomat.Util\Lottomat.Util\Lottomat.Utils.csproj">
+      <Project>{07aa2566-d0e5-47af-a17d-3b1c6aee598d}</Project>
+      <Name>Lottomat.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottomat.Application.Code\Lottomat.Application.Code.csproj">
+      <Project>{9b10db87-130c-41d3-8687-1fac877db74a}</Project>
+      <Name>Lottomat.Application.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottomat.Application.Entity\Lottomat.Application.Entity.csproj">
+      <Project>{c10920fe-8c74-4993-a7f4-1da189da842c}</Project>
+      <Name>Lottomat.Application.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottomat.Application.IService\Lottomat.Application.IService.csproj">
+      <Project>{6ce11ff9-1cb7-494e-89c7-5f06bea94211}</Project>
+      <Name>Lottomat.Application.IService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

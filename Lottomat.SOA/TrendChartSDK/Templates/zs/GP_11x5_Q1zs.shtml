@@ -1,0 +1,259 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+            <th colspan="5" rowspan="2" width="146">开奖号码</th>
+            <th rowspan="2" width="31">和<br />值</th>
+            <th colspan="11">出号走势</th>
+            <th rowspan="2" width="31">跨<br />度</th>
+            <th colspan="11">前一走势</th>
+            <th rowspan="2" width="31">前<br />一</th>
+            <th colspan="9">前一分析</th>
+        </tr>
+        <tr>
+            <th width="27">01</th>
+            <th width="27">02</th>
+            <th width="27">03</th>
+            <th width="27">04</th>
+            <th width="27">05</th>
+            <th width="27">06</th>
+            <th width="27">07</th>
+            <th width="27">08</th>
+            <th width="27">09</th>
+            <th width="27">10</th>
+            <th width="27">11</th>
+            <th width="27">01</th>
+            <th width="27">02</th>
+            <th width="27">03</th>
+            <th width="27">04</th>
+            <th width="27">05</th>
+            <th width="27">06</th>
+            <th width="27">07</th>
+            <th width="27">08</th>
+            <th width="27">09</th>
+            <th width="27">10</th>
+            <th width="27">11</th>
+            <th width="27">大</th>
+            <th width="27">小</th>
+            <th width="27">奇</th>
+            <th width="27">偶</th>
+            <th width="27">质</th>
+            <th width="27">合</th>
+            <th width="27">0</th>
+            <th width="27">1</th>
+            <th width="27">2</th>
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><strong>选号1</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-square" pl="orange">大</td>
+            <td class="presele-square" pl="orange">小</td>
+            <td class="presele-square" pl="bgblue">奇</td>
+            <td class="presele-square" pl="bgblue">偶</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号2</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-square" pl="orange">大</td>
+            <td class="presele-square" pl="orange">小</td>
+            <td class="presele-square" pl="bgblue">奇</td>
+            <td class="presele-square" pl="bgblue">偶</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号3</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td></th>
+            <td class="presele-square" pl="orange">大</td>
+            <td class="presele-square" pl="orange">小</td>
+            <td class="presele-square" pl="bgblue">奇</td>
+            <td class="presele-square" pl="bgblue">偶</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2"><strong>数据统计</strong></th>
+            <th colspan="5" rowspan="2" width="146">开奖号码</th>
+            <th rowspan="2" width="31">和<br />值</th>
+            <th colspan="11">出号走势</th>
+            <th rowspan="2" width="31">跨<br />度</th>
+            <th colspan="11">前一走势</th>
+            <th rowspan="2" width="31">前<br />一</th>
+            <th colspan="9">前一分析</th>
+        </tr>
+        <tr>
+            <th width="27">01</th>
+            <th width="27">02</th>
+            <th width="27">03</th>
+            <th width="27">04</th>
+            <th width="27">05</th>
+            <th width="27">06</th>
+            <th width="27">07</th>
+            <th width="27">08</th>
+            <th width="27">09</th>
+            <th width="27">10</th>
+            <th width="27">11</th>
+            <th width="27">01</th>
+            <th width="27">02</th>
+            <th width="27">03</th>
+            <th width="27">04</th>
+            <th width="27">05</th>
+            <th width="27">06</th>
+            <th width="27">07</th>
+            <th width="27">08</th>
+            <th width="27">09</th>
+            <th width="27">10</th>
+            <th width="27">11</th>
+            <th width="27">大</th>
+            <th width="27">小</th>
+            <th width="27">奇</th>
+            <th width="27">偶</th>
+            <th width="27">质</th>
+            <th width="27">合</th>
+            <th width="27">0</th>
+            <th width="27">1</th>
+            <th width="27">2</th>
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>
+<script>$("td.ball-yred").each(function(){var n = parseInt($(this).text());if(!isNaN(n) && n<10)$(this).text("0"+n);})</script>

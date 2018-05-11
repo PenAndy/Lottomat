@@ -1,0 +1,552 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td class="blue-one">
+                不定位
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">
+                        <span>1、请选择投注号码(如果使用大底，该项可不选)</span>
+                    </li>
+                    <li class="ballbox">
+                        <!-- <span>百位:</span>-->
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_bw" id="FilterName_bw" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    请选择你要过滤缩水的号码。<br>
+                    （实际上，开哪一个号码都是很正常的。因此我们在选择号码时，建议大家使用“全选”功能，把这些号码都选中，然后再使用下面提供的过滤功能来缩水，减少投注号的注数）
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                大底
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">
+                        <span id="FilterName_19_0">请在以下方框中输入你的大底号，两注号码之间用一个空格或逗号分开：</span>
+                    </li>
+                    <li style="height: auto;">
+                        <textarea name="FilterName_dadi" id="FilterName_dadi_0" class="textarea"></textarea>
+                    </li>
+                    <li style="height: auto;">
+                        <span style="font-size: 16px;">类型:</span>
+                        <input name="FilterName_zhizuxuan" id="FilterName_zhizuxuan_0" type="radio" checked="checked" value="0" />
+                        <label class="normal" for="FilterName_zhizuxuan_0">
+                            直选
+                        </label>
+                        <input name="FilterName_zhizuxuan" id="FilterName_zhizuxuan_1" type="radio" value="1" />
+                        <label class="normal" for="FilterName_zhizuxuan_1">
+                            组选
+                        </label>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    如果定位已经选择了号码，则不必选择使用大底进行过滤
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    杀号过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">2、号码过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_206" id="FilterName_206_0" value="排除选中" type="radio" checked /><label for="FilterName_206_0" class="red-text">排除选中</label>
+                    </li>
+                    <li class="ballbox">
+                        <span></span>
+                        <span class="bigball grey">0</span><span class="bigball grey"> 1</span><span class="bigball grey"> 2</span><span class="bigball grey"> 3</span><span class="bigball grey"> 4</span><span class="bigball grey"> 5</span><span class="bigball grey"> 6</span><span class="bigball grey"> 7</span><span class="bigball grey"> 8</span><span class="bigball grey"> 9</span>
+                        <input type="hidden" name="FilterName_208" id="FilterName_208" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    不定位杀号，过滤的号码越多，杀掉中奖号的可能性就越大。建议此区慎用。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    胆码过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">3、胆码过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_176" id="FilterName_176_0" value="包含选中" type="radio" checked /><label for="FilterName_176_0" class="red-text">包含选中</label>
+                    </li>
+                    <li class="ballbox">
+                        <span></span>
+                        <span class="bigball grey">0</span><span class="bigball grey"> 1</span><span class="bigball grey"> 2</span><span class="bigball grey"> 3</span><span class="bigball grey"> 4</span><span class="bigball grey"> 5</span><span class="bigball grey"> 6</span><span class="bigball grey"> 7</span><span class="bigball grey"> 8</span><span class="bigball grey"> 9</span>
+                        <input type="hidden" name="FilterName_178" id="FilterName_178" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    不定胆码过滤。
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    二码和过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">4、二码和过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_183" id="FilterName_183_0" value="排除选中" type="radio" /><label for="FilterName_183_0">排除选中</label><input name="FilterName_183" id="FilterName_183_1" value="包含选中" type="radio" checked /><label for="FilterName_183_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span><span class="frame white"> 1</span><span class="frame white"> 2</span><span class="frame white"> 3</span><span class="frame white"> 4</span><span class="frame white"> 5</span><span class="frame white"> 6</span><span class="frame white"> 7</span><span class="frame white"> 8</span><span class="frame white"> 9</span></br>
+                        <span class="frame white">10</span>
+                        <span class="frame white">11</span><span class="frame white"> 12</span><span class="frame white"> 13</span><span class="frame white"> 14</span><span class="frame white"> 15</span><span class="frame white"> 16</span><span class="frame white"> 17</span><span class="frame white"> 18</span>
+                        <input name="FilterName_184" id="FilterName_184" type="hidden" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    两码和：单注号码任意两位数字相加的值，范围是0～18。如果选定4 5 6，那么列出全部两码和含有4或5或6的号码。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    二码差过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">5、二码差过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_179" id="FilterName_179_0" value="排除选中" type="radio" /><label for="FilterName_179_0">排除选中</label><input name="FilterName_179" id="FilterName_179_1" value="包含选中" type="radio" checked /><label for="FilterName_179_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span><span class="frame white"> 1</span><span class="frame white"> 2</span><span class="frame white"> 3</span><span class="frame white"> 4</span><span class="frame white"> 5</span><span class="frame white"> 6</span><span class="frame white"> 7</span><span class="frame white"> 8</span><span class="frame white"> 9</span>
+                        <input type="hidden" name="FilterName_180" id="FilterName_180" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    两码差：单注号码任意两位数字相减的值，范围是0～9。如果选定4 5 6，那么列出全部两码差含有4或5或6的号码。
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    二码过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">6、二码过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_181" id="FilterName_181_0" value="排除选中" type="radio" checked="checked" />
+                        <label for="FilterName_181_0">排除选中</label>
+                        <input name="FilterName_181" id="FilterName_181_1" value="包含选中" type="radio" />
+                        <label for="FilterName_181_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">00</span>
+                        <span class="frame white">01</span>
+                        <span class="frame white">02</span>
+                        <span class="frame white">03</span>
+                        <span class="frame white">04</span>
+                        <span class="frame white">05</span>
+                        <span class="frame white">06</span>
+                        <span class="frame white">07</span>
+                        <span class="frame white">08</span>
+                        <span class="frame white">09</span>
+                        <span class="frame white">11</span><br />
+                        <span class="frame white">12</span>
+                        <span class="frame white">13</span>
+                        <span class="frame white">14</span>
+                        <span class="frame white">15</span>
+                        <span class="frame white">16</span>
+                        <span class="frame white">17</span>
+                        <span class="frame white">18</span>
+                        <span class="frame white">19</span>
+                        <span class="frame white">22</span>
+                        <span class="frame white">23</span>
+                        <span class="frame white">24</span><br />
+                        <span class="frame white">25</span>
+                        <span class="frame white">26</span>
+                        <span class="frame white">27</span>
+                        <span class="frame white">28</span>
+                        <span class="frame white">29</span>
+                        <span class="frame white">33</span>
+                        <span class="frame white">34</span>
+                        <span class="frame white">35</span>
+                        <span class="frame white">36</span>
+                        <span class="frame white">37</span>
+                        <span class="frame white">38</span><br />
+                        <span class="frame white">39</span>
+                        <span class="frame white">44</span>
+                        <span class="frame white">45</span>
+                        <span class="frame white">46</span>
+                        <span class="frame white">47</span>
+                        <span class="frame white">48</span>
+                        <span class="frame white">49</span>
+                        <span class="frame white">55</span>
+                        <span class="frame white">56</span>
+                        <span class="frame white">57</span>
+                        <span class="frame white">58</span><br />
+                        <span class="frame white">59</span>
+                        <span class="frame white">66</span>
+                        <span class="frame white">67</span>
+                        <span class="frame white">68</span>
+                        <span class="frame white">69</span>
+                        <span class="frame white">77</span>
+                        <span class="frame white">78</span>
+                        <span class="frame white">79</span>
+                        <span class="frame white">88</span>
+                        <span class="frame white">89</span>
+                        <span class="frame white">99</span>
+                        <input name="FilterName_182" id="FilterName_182" type="hidden" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    百、十、个位的数字除三的余数，组合后为012路，注意此处为组选版，所以上述的每种012路形态，都包括定位的3种形态。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    012路过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">7、012路过滤 </li>
+                    <li class="radio">
+                        <input name="FilterName_169" id="FilterName_169_0" value="排除选中" type="radio" /><label for="FilterName_169_0">排除选中</label><input name="FilterName_169" id="FilterName_169_1" value="包含选中" type="radio" checked /><label for="FilterName_169_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">3个0</span>
+                        <span class="frame white-80">3个1</span>
+                        <span class="frame white-80">3个2</span>
+                        <span class="frame white-80">2个0</span><br />
+                        <span class="frame white-80">2个1</span>
+                        <span class="frame white-80">2个2</span>
+                        <span class="frame white-80">各1个</span>
+                        <input name="FilterName_170" id="FilterName_170" type="hidden" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    百、十、个位的数字除三的余数，组合后为012路，注意此处为组选版，所以上述的每种012路形态，都包括定位的3种形态。
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    和值过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">8、和值过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_192" id="FilterName_192_0" value="排除选中" type="radio" /><label for="FilterName_192_0">排除选中</label><input name="FilterName_192" id="FilterName_192_1" value="包含选中" type="radio" checked /><label for="FilterName_192_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">00</span><span class="frame white"> 01</span><span class="frame white"> 02</span><span class="frame white"> 03</span><span class="frame white"> 04</span><span class="frame white"> 05</span><span class="frame white"> 06</span><span class="frame white"> 07</span><span class="frame white"> 08</span><span class="frame white"> 09</span><br />
+                        <span class="frame white">10</span><span class="frame white"> 11</span><span class="frame white"> 12</span><span class="frame white"> 13</span><span class="frame white"> 14</span><span class="frame white"> 15</span><span class="frame white"> 16</span><span class="frame white"> 17</span><span class="frame white"> 18</span><span class="frame white"> 19</span></br>
+                        <span class="frame white">20</span><span class="frame white"> 21</span><span class="frame white"> 22</span><span class="frame white"> 23</span><span class="frame white"> 24</span><span class="frame white"> 25</span><span class="frame white"> 26</span><span class="frame white"> 27</span>
+                        <input name="FilterName_194" id="FilterName_194" type="hidden" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    百、十、个位的数字除三的余数，组合后为012路，注意此处为组选版，所以上述的每种012路形态，都包括定位的3种形态。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    和尾过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">9、和尾过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_189" id="FilterName_189_0" value="排除选中" type="radio" /><label for="FilterName_189_0">排除选中</label><input name="FilterName_189" id="FilterName_189_1" value="包含选中" type="radio" chekced /><label for="FilterName_189_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span><span class="frame white"> 1</span><span class="frame white"> 2</span><span class="frame white"> 3</span><span class="frame white"> 4</span><span class="frame white"> 5</span><span class="frame white"> 6</span><span class="frame white"> 7</span><span class="frame white"> 8</span><span class="frame white"> 9</span>
+                        <input type="hidden" name="FilterName_190" id="FilterName_190" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    取和值的最后一位，如09的和尾是9
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    跨度过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">10、跨度过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_197" id="FilterName_197_0" value="排除选中" type="radio" /><label for="FilterName_197_0">排除选中</label><input name="FilterName_197" id="FilterName_197_1" value="包含选中" type="radio" checked /><label for="FilterName_197_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span><span class="frame white"> 1</span><span class="frame white"> 2</span><span class="frame white"> 3</span><span class="frame white"> 4</span><span class="frame white"> 5</span><span class="frame white"> 6</span><span class="frame white"> 7</span><span class="frame white"> 8</span><span class="frame white"> 9</span>
+                        <input type="hidden" name="FilterName_199" id="FilterName_199" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    开奖号中最大数与最小数的差值
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    大小过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">11、大小过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_172" id="FilterName_172_0" value="排除选中" type="radio" /><label for="FilterName_172_0">排除选中</label><input name="FilterName_172" id="FilterName_172_1" value="包含选中" type="radio" checked /><label for="FilterName_172_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">全大</span>
+                        <span class="frame white-80">两大一小</span>
+                        <span class="frame white-80">两小一大</span>
+                        <span class="frame white-80">全小</span>
+                        <input type="hidden" name="FilterName_174" id="FilterName_174" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    约定56789为大、01234为小。
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    奇偶过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">12、奇偶过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_202" id="FilterName_202_0" value="排除选中" type="radio" /><label for="FilterName_202_0">排除选中</label><input name="FilterName_202" id="FilterName_202_1" value="包含选中" type="radio" checked /><label for="FilterName_202_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">全奇</span>
+                        <span class="frame white-80">两奇一偶</span>
+                        <span class="frame white-80">两偶一奇</span>
+                        <span class="frame white-80">全偶</span>
+                        <input type="hidden" name="FilterName_204" id="FilterName_204" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    奇：13579、偶：02468
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    质合过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">13、质合过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_214" id="FilterName_214_0" value="排除选中" type="radio" /><label for="FilterName_214_0">排除选中</label><input name="FilterName_214" id="FilterName_214_1" value="包含选中" type="radio" checked /><label for="FilterName_214_1" class="red-text">包含选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">全质</span>
+                        <span class="frame white-80">两质一合</span>
+                        <span class="frame white-80">两合一质</span>
+                        <span class="frame white-80">全合</span>
+                        <input type="hidden" name="FilterName_216" id="FilterName_216" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    约定12357为质、04689为合
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    顺子过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">14、顺子过滤</li>
+                    <li class="radio">
+                        <input name="FilterName_210" id="FilterName_210_0" value="不过滤顺子" type="radio" checked /><label for="FilterName_210_0">不过滤顺子</label>
+                        <input name="FilterName_210" id="FilterName_210_1" value="过滤顺子" type="radio" /><label for="FilterName_210_1">过滤顺子</label>
+                        <input name="FilterName_210" id="FilterName_210_2" value="过滤半顺子" type="radio" /><label for="FilterName_210_2">过滤半顺子</label>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    杀顺子：排除掉三位数连号号码(共有60注)<br>
+                    杀半顺子：排除掉两位数连号的号码。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    组合选项
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">16、组合选项 </li>
+
+                    <li class="zuxun" style="text-align:left">
+                        <input name="zuhe" value="组选" id="zuhe2" onclick="Czuhe('zuxun');" type="radio" checked="checked" /><label for="zuhe2" class="bold">组选</label>
+                        <label>
+                            &nbsp; &nbsp;&nbsp;包含：
+                        </label>
+                        <input name="zuhe3" value="组三" id="zuhe3" checked="checked" type="checkbox" /><label for="zuhe3">组三</label>
+                        <input name="zuhe6" value="组六" id="zuhe6" checked="checked" type="checkbox" /><label for="zuhe6">组六</label>
+                        <!--<input name="baozi" value="豹子" id="baozi" checked="checked" type="checkbox"/><label for="baozi">豹子</label>-->
+                    </li>
+
+                </ul>
+            </td>
+            <td class="blue-three">
+                <br />
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one" colspan="3" style="width:100%;">
+                <div class="but_1">
+                    <input name="imageField" id="imageField" type="image" src="/static/images/kjss.gif" />
+                    <input name="imageField3" id="resetImage" type="image" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

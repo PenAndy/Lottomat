@@ -1,0 +1,185 @@
+@{;
+    ViewBag.Title = "表单页面";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<link href="~/Content/scripts/plugins/simditor/css/simditor.css" rel="stylesheet" />
+<script src="~/Content/scripts/plugins/simditor/js/module.min.js"></script>
+<script src="~/Content/scripts/plugins/simditor/js/uploader.min.js"></script>
+<script src="~/Content/scripts/plugins/simditor/js/hotkeys.min.js"></script>
+<script src="~/Content/scripts/plugins/simditor/js/simditor.min.js"></script>
+
+<script>
+    var keyValue = request('keyValue');
+    $(function () {
+        IntoComList();
+        initControl();  
+    });
+    //初始化控件
+    function initControl() {
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "/GalleryManage/GalleryDetail/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    //$("#form1").SetWebControls(data);
+                    $("#SortCode").val(data.data.SortCode);
+                    $("#ImageUrl").val(data.data.ImageUrl);
+                    $("#PeriodsNumber").append("<option value='" +
+                        data.data.PeriodsNumber +
+                        "'>" +
+                        data.data.PeriodsNumber +
+                        "</option>");
+                    //$("#GalleryId").ComboBoxTreeSetValue(data.GalleryId);
+                   // $("#GalleryId").val(data.GalleryId);
+                    $("#GalleryId").append("<option value='" +
+                        data.data.GalleryId +
+                        "'>" + data.GalleryName
+                        +
+                        "</option>");
+                }   
+            })
+        }
+    }
+    //保存表单;
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }
+        var postData = {
+            GalleryId: $("#GalleryId").val(),
+            PeriodsNumber: $("#PeriodsNumber").val(),
+            SortCode: $("#SortCode").val(),
+            ImageUrl: $("#ImageUrl").val(),
+           
+        }
+        $.SaveForm({
+            url: "/GalleryManage/GalleryDetail/SaveForm?keyValue=" + keyValue,
+            param: postData,
+            loading: "正在保存数据...",
+            success: function () {
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        })
+    }
+    function IntoComList() {
+
+        if (!keyValue) {
+            $.ajax({
+                type: 'POST',
+                contentType:'application/x-www-form-urlencoded',
+                url: '/GalleryManage/Gallery/QueryGalleryComList',
+                data: { CategoryId: 0 },
+                dataType: 'json',
+                success: function (data) {
+                    $("#GalleryId").find("option").remove();
+                    for (var prop in data.Data) {
+
+                        $("#GalleryId").append("<option value='" +
+                            data.Data[prop] +
+                            "'>" +
+                            prop +
+                            "</option>");
+                    }
+                }
+            });
+
+        }
+    }
+    function ComChangePerNum() {
+        var id = $("#GalleryId").val();
+        if (true) {
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/x-www-form-urlencoded',
+                url: '/GalleryManage/GalleryDetail/QueryPeriodsNumber',
+                data: { GalleryId: id },
+                dataType: 'json',
+                success: function (data) {
+                    $("#PeriodsNumber").find("option").remove();
+                    for (var prop in data.Data) {
+                        $("#PeriodsNumber").append("<option value='" +
+                            data.Data[prop] +
+                            "'>" +
+                            data.Data[prop] +
+                            "</option>");
+                    }
+                }
+            });
+
+        }
+    }
+</script>
+<div style="margin-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <td class="formTitle">所属图库<span class="required">*</span></td>
+            <td class="formValue">
+                <select class="form-control" id="GalleryId" onchange="ComChangePerNum()">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">期数<span class="required">*</span></td>
+            <td class="formValue">
+                <select class="form-control" id="PeriodsNumber">
+
+                </select>
+              
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">排序<span class="required">*</span></td>
+            <td class="formValue">
+                <input id="SortCode" type="text" class="form-control"  value="99" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">图片上传<span class="required">*</span></td>
+            <td class="formValue">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 90%">
+                            @*<img id="img-preview" src=""/>*@
+                            <input id="ImageUrl" type="text" class="form-control" placeholder="" readonly="readonly" />
+                        </td>
+                        <td style="text-align: center">
+                            <span><i class="fa fa-plus fa-2x" onclick="upImage()" style="cursor: pointer"></i></span>
+                            @*<button type="button" onclick="upImage()"></button>*@
+                        </td>
+                    </tr>
+                </table>
+
+                <script type="text/plain" id="j_ueditorupload" style="height:5px;display:none;">
+                </script>
+                <script type="text/javascript">
+                    //实例化编辑器
+                    var o_ueditorupload = UE.getEditor('j_ueditorupload',
+                        {
+                            autoHeightEnabled: false
+                        });
+                    o_ueditorupload.ready(function () {
+
+                        o_ueditorupload.hide();//隐藏编辑器
+
+                        //监听图片上传,地址：arg[0].src
+                        o_ueditorupload.addListener('beforeInsertImage', function (t, arg) {
+                            //alert('这是图片地址：' + arg[0].src);
+                            //这里解析你的返回类型
+                            $("#ImageUrl").val(arg[0].src);
+
+                        });
+                    });
+
+                    //弹出图片上传的对话框
+                    function upImage() {
+                        var myImage = o_ueditorupload.getDialog("insertimage");
+                        myImage.open();
+                    }
+                </script>
+            </td>
+        </tr>
+        
+       
+    </table>
+</div>

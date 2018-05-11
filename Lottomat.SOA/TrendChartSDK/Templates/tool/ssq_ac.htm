@@ -1,0 +1,84 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td class="blue-three half">
+                <ul class="list array rightArray" id="leftul">
+                    <li class="adobeRight">
+                        <input name="chk" type="radio" value="0" checked="checked" class="radio" onclick="checkedOther(this);" /><label class="bold">批量计算</label><br />
+                        在文本框中输出号码<br>
+                        <span>例如：01 07 12 14 18 28</span>
+                    </li>
+                    <li>
+                        <textarea name="nums" class="textarea"></textarea>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three half">
+                <ul class="list array selected" id="rightul">
+                    <li>
+                        <input name="chk" type="radio" value="1" class="radio" onclick="checkedOther(this);" /><label class="bold">点击选号</label><br />
+                        点击下列号码
+                    </li>
+                    <li class='aloneli'>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">01</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">02</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">03</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">04</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">05</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">06</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">07</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">08</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">09</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">10</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">11</span><br>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">12</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">13</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">14</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">15</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">16</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">17</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">18</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">19</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">20</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">21</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">22</span><br>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">23</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">24</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">25</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">26</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">27</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">28</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">29</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">30</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">31</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">32</span>
+                        <span name="d" onclick="selectNum(this)" class="bigball grey-28">33</span>
+                    </li>
+                    <li class="ballNo">
+                        <input name="num" id="n0" type="text" class="return" />
+                        <input name="num" id="n1" type="text" class="return" />
+                        <input name="num" id="n2" type="text" class="return" />
+                        <input name="num" id="n3" type="text" class="return" />
+                        <input name="num" id="n4" type="text" class="return" />
+                        <input name="num" id="n5" type="text" class="return" />
+                        <input type="hidden" name="numstr" id="numstr" class="return" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="blue-one" style="width: 100%;">
+                <div class="but_1">
+                    <input type="image" name="imageField" id="imageField" src="/static/images/ksfx.gif" />
+                    <input type="image" name="imageField3" id="resetImage" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

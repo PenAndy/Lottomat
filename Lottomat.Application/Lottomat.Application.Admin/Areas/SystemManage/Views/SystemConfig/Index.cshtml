@@ -1,0 +1,301 @@
+﻿@using Lottomat.Util
+@{
+    ViewBag.Title = "系统配置管理";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script>
+    ;
+    $(function () {
+        dialogAlert("修改配置文件时请填入正确的参数值，错误的参数值可能对系统会造成未知的影响，因此一般情况下建议不要对其修改！", 7);
+    });
+
+    //保存
+    function saveConfig(key, val) {
+        console.log("============key:" + key + "=====val:" + val);
+        $.AjaxRequest({
+            url: "/SystemManage/SystemConfig/SaveConfig",
+            param: {
+                key: key,
+                value: val
+            },
+            type: "post",
+            dataType: "json",
+            async: true,
+            success: function (req) {
+                if (req) {
+                    //var data = eval('(' + req + ')');
+                    if (req.type == 1) {
+                        dialogMsg(req.message, 1, 1000);
+                    } else {
+                        dialogMsg(req.message, 2, 1000);
+                    }
+                }
+            }
+        });
+    }
+
+    function showTip() {
+        dialogContent({
+            id: "Tip",
+            title: "配置说明",
+            width: "500px",
+            height: "300px",
+            content: $('#tip-content').html(),
+            btn: []
+        });
+    }
+</script>
+@*<div class="titlePanel">
+        <div class="toolbar">
+            <div class="btn-group">
+                <a id="lr-replace" class="btn btn-default" onclick="reload()"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                <a id="lr-save" class="btn btn-default" onclick="btn_save()"><i class="fa fa-plus"></i>&nbsp;保存</a>
+            </div>
+            <div class="btn-group">
+                <a id="lr-check" class="btn btn-default" onclick="btn_check()"><i class="fa fa-check"></i>&nbsp;校验</a>
+                <a id="lr-checkall" class="btn btn-default" onclick="btn_checkAll()"><i class="fa fa-check"></i>&nbsp;一键校验</a>
+            </div>
+            <div class="btn-group">
+                <a id="lr-removecache" class="btn btn-default" onclick="btn_removecache()"><i class="fa fa-remove"></i>&nbsp;清除缓存</a>
+            </div>
+            <script>$('.toolbar').authorizeButton()</script>
+        </div>
+    </div>*@
+<style type="text/css">
+    .form-control-input {
+        width: 350px;
+        height: 28px;
+        line-height: 2;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 9pt;
+        padding-left: 5px;
+    }
+</style>
+<div class="gridPanel">
+    <div class="border" id="desktop" style="margin: 10px 10px 0 10px; background: #fff; overflow: auto;">
+        <div class="portal-panel">
+            <div class="row" style="overflow: hidden; margin-bottom: 10px;">
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-cogs"></i>&nbsp;&nbsp;系统相关配置
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <table class="form">
+                            <tr>
+                                <td class="formTitle">系统名称：</td>
+                                <td class="formValue">
+                                    <input id="SystemName" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("SystemName")" onblur="saveConfig('SystemName',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">软件名称：</td>
+                                <td class="formValue">
+                                    <input id="SoftName" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("SoftName")" onblur="saveConfig('SoftName',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">机构名称：</td>
+                                <td class="formValue">
+                                    <input id="CustomerCompanyName" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CustomerCompanyName")" onblur="saveConfig('CustomerCompanyName',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">版本号：</td>
+                                <td class="formValue">
+                                    <input id="Version" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("Version")" onblur="saveConfig('Version',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">联系我们：</td>
+                                <td class="formValue">
+                                    @*<input id="Contact" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("Contact")" onkeyup="saveConfig(this.value)" onblur="saveConfig(this.value)" />*@
+
+                                    <textarea id="Contact" class="form-control" rows="5" value="@ConfigHelper.GetValue("Contact")" onblur="saveConfig('Contact',this.value)"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-glass"></i>&nbsp;&nbsp;系统软件参数配置
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <table class="form">
+                            <tr>
+                                <td class="formTitle">登陆提供者模式：</td>
+                                <td class="formValue">
+                                    <input id="LoginProvider" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("LoginProvider")" onblur="saveConfig('LoginProvider',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：Session、Cookie）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">数据库超时间：</td>
+                                <td class="formValue">
+                                    <input id="CommandTimeout" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CommandTimeout")" onblur="saveConfig('CommandTimeout',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：大于0的整数）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">服务器缓存类型：</td>
+                                <td class="formValue">
+                                    <input id="CacheType" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CacheType")" onblur="saveConfig('CacheType',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：WebCache、Redis、Memcached）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">允许重复登录：</td>
+                                <td class="formValue">
+                                    <input id="CheckOnLine" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CheckOnLine")" onblur="saveConfig('CheckOnLine',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：true、false）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">允许用户注册：</td>
+                                <td class="formValue">
+                                    <input id="AllowUserRegister" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("AllowUserRegister")" onblur="saveConfig('AllowUserRegister',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：true、false）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">启用即时通讯：</td>
+                                <td class="formValue">
+                                    <input id="UseMessage" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("UseMessage")" onblur="saveConfig('UseMessage',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：true、false）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">启用系统日志：</td>
+                                <td class="formValue">
+                                    <input id="IsLog" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("IsLog")" onblur="saveConfig('IsLog',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：true、false）
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="overflow: hidden; margin-bottom: 10px;">
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-envelope"></i>&nbsp;&nbsp;邮件参数配置
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <table class="form">
+                            <tr>
+                                <td class="formTitle">发送邮件：</td>
+                                <td class="formValue">
+                                    <input id="ErrorToMail" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorToMail")" onblur="saveConfig('ErrorToMail',this.value)" />
+                                    <span style="color: Red;">
+                                        （可选择值为：true、false）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">收件人：</td>
+                                <td class="formValue">
+                                    <input id="ErrorReportTo" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorReportTo")" onblur="saveConfig('ErrorReportTo',this.value)" />
+                                    <span style="color: Red;">
+                                        （备注：多个收件人用;隔开，最后一个不加）
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">邮件服务器名称：</td>
+                                <td class="formValue">
+                                    <input id="ErrorReportMailName" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorReportMailName")" onblur="saveConfig('ErrorReportMailName',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">邮件服务器地址：</td>
+                                <td class="formValue">
+                                    <input id="ErrorReportMailUserName" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorReportMailUserName")" onblur="saveConfig('ErrorReportMailUserName',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">邮件服务器密码：</td>
+                                <td class="formValue">
+                                    <input id="ErrorReportMailPassword" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorReportMailPassword")" onblur="saveConfig('ErrorReportMailPassword',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">邮箱主机：</td>
+                                <td class="formValue">
+                                    <input id="ErrorReportMailHost" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("ErrorReportMailHost")" onb onblur="saveConfig('ErrorReportMailHost',this.value)" />
+                                    <i class="fa fa-exclamation-circle" style="cursor: pointer;color:red" onclick="showTip()"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tip-content" style="display: none;margin-left: 10px">
+                        <span style="color: Red; line-height: 2;">
+                            <p>腾讯QQ邮箱（推荐）：smtp.qq.com <a target="_blank" style="text-decoration: none" href="http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=166" title="注意腾讯邮箱要单独设置安全码 点击查看说明">[smtp/pop3开启]</a></p>
+                            <p>网易163邮箱：smtp.163.net <a target="_blank" style="text-decoration: none" href="http://help.163.com/10/0312/13/61J0LI3200752CLQ.html" title="注意网易免费邮箱smtp密码要单独设置 点击查看说明">[smtp/pop3开启]</a></p>
+                            <p>新浪免费邮箱：smtp.sina.com <a target="_blank" style="text-decoration: none" href="http://mail.sina.com.cn/help2/client01.html">[smtp/pop3开启]</a></p>
+                            <p>腾讯企业邮箱：smtp.exmail.qq.com</p>
+                            <p>雅虎免费邮箱：smtp.mail.yahoo.cn</p>
+                            <p>网易126邮箱：smtp.126.com</p>
+                            <p>搜狐免费邮箱：smtp.sohu.com</p>
+                        </span>
+                    </div>
+                </div>
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-chain-broken"></i>&nbsp;&nbsp;数据库链接字符串
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <table class="form">
+                            <tr>
+                                <td class="formTitle">资讯数据库：</td>
+                                <td class="formValue">
+                                    <input id="InformationBase" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("InformationBase")" onblur="saveConfig('InformationBase',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">开奖号：</td>
+                                <td class="formValue">
+                                    <input id="LotteryNumber" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("LotteryNumber")" o onblur="saveConfig('LotteryNumber',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">图库：</td>
+                                <td class="formValue">
+                                    <input id="GalleryBase" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("GalleryBase")" onblur="saveConfig('GalleryBase',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">CP55128：</td>
+                                <td class="formValue">
+                                    <input id="CP55128" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CP55128")" onblur="saveConfig('CP55128',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle">CB55128：</td>
+                                <td class="formValue">
+                                    <input id="CB55128" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("CB55128")" onblur="saveConfig('CB55128',this.value)" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

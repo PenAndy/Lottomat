@@ -1,0 +1,272 @@
+@{;
+    ViewBag.Title = "表单页面";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var keyValue = request('keyValue');
+    $(function () {
+        initControl();
+    });
+    //初始化控件
+    function initControl() {
+        //获取表单
+        if (!!keyValue) {
+            $.SetForm({
+                url: "../../LotteryNumberManage/QGTCP3/GetFormJson",
+                param: { keyValue: keyValue },
+                success: function (data) {
+                    showDataInWebControls(data);
+
+                    //$("#form1").SetWebControls(data);
+                }
+            })
+        } else {
+            //获取最新期数
+            $.AjaxRequest({
+                url: "../../LotteryNumberManage/QGFC3D/GetNewTerm?type=pl3",
+                type: "GET",
+                success: function (req) {
+                    if (req) {
+                        $('#Term').val(req);
+                    }
+                }
+            });
+        }
+    }
+
+    //展现数据
+    function showDataInWebControls(data) {
+        //开机号
+        if (data["KaiJiHao"] != null) {
+            var KaiJiHao = data["KaiJiHao"].split(",");
+            if (KaiJiHao) {
+                $.each(KaiJiHao, function (index, item) {
+                    var i = index + 1;
+                    $('#txtKJH' + i).val(item);
+                });
+            }
+        }
+        //试机号
+        if (data["ShiJiHao"] != null) {
+            var ShiJiHao = data["ShiJiHao"].split(",");
+            if (ShiJiHao) {
+                $.each(ShiJiHao, function (index, item) {
+                    var i = index + 1;
+                    $('#txtSJH' + i).val(item);
+                });
+            }
+        }
+
+        //期数
+        $('#Term').val(data["Term"]);
+        //时间
+        $('#OpenTime').val(data["OpenTime"]);
+
+        //开奖号
+        for (var i = 1; i <= 5; i++) {
+            $('#OpenCode' + i).val(data["OpenCode" + i]);
+        }
+
+        try {
+            //新版本数据，Json
+            if (data["Detail"] != null) {
+                var Detail = JSON.parse(data["Detail"]);
+
+                //本期投注
+                $("#txt_tzmoney").val(Detail["Bqtz"]);
+
+                //详情
+                var KaiJiangItems = Detail["KaiJiangItems"];
+                $.each(KaiJiangItems, function (index, item) {
+                    var i = index + 1;
+                    $('#txt_zx' + i).val(item.Total);
+                    $('#txt_zxmoney' + i).val(item.TotalMoney);
+                });
+            }
+        } catch (e) {
+            //老版本数据，字符串
+            //$("#form1").SetWebControls(data);
+            //43668512 ^直选|13298|1040,组三|18095|346,组六|0|173 ^8|0~8~5|0~0~9
+            var Detail = data["Detail"].split("^");
+
+            var KaiJiangItems = Detail[1].split(",");
+            var Zx = KaiJiangItems[0].split("|");
+            var Zs = KaiJiangItems[1].split("|");
+            var Zl = KaiJiangItems[2].split("|");
+            
+            //直选
+            if (Zx[0] == "直选") {
+                $('#txt_zx1').val(Zx[1]);
+                $('#txt_zxmoney1').val(Zx[2]);
+            }
+            //组三
+            if (Zs[0] == "组三") {
+                $('#txt_zx2').val(Zs[1]);
+                $('#txt_zxmoney2').val(Zs[2]);
+            }
+            //组六
+            if (Zl[0] == "组六") {
+                $('#txt_zx3').val(Zl[1]);
+                $('#txt_zxmoney3').val(Zl[2]);
+            }
+            
+            //本期投注
+            $("#txt_tzmoney").val(Detail[0]);
+            
+        }
+        //$("#form1").SetWebControls(data);
+    }
+    //保存表单;
+    function AcceptClick() {
+        if (!$('#form1').Validform()) {
+            return false;
+        }//var postData = $("#form1").GetWebControls(keyValue);
+        var postData = {
+            Term: $('#Term').val(),
+            KaiJiHao: $('#txtKJH1').val() + "," + $('#txtKJH2').val() + "," + $('#txtKJH3').val(),
+            ShiJiHao: $('#txtSJH1').val() + "," + $('#txtSJH2').val() + "," + $('#txtSJH3').val(),
+            OpenCode1: $('#OpenCode1').val(),
+            OpenCode2: $('#OpenCode2').val(),
+            OpenCode3: $('#OpenCode3').val(),
+            OpenCode4: $('#OpenCode4').val(),
+            OpenCode5: $('#OpenCode5').val(),
+            OpenTime: $('#OpenTime').val(),
+            Detail: getKjDetailJson()
+        };
+        $.SaveForm({
+            url: "../../LotteryNumberManage/QGTCP3/SaveForm?keyValue=" + keyValue,
+            param: postData,
+            loading: "正在保存数据...",
+            success: function () {
+                $.currentIframe().$("#gridTable").trigger("reloadGrid");
+            }
+        })
+    }
+
+    //组装开奖详情
+    function getKjDetailJson() {
+        var res = {
+            Bqtz: $("#txt_tzmoney").val(),
+            KaiJiangItems: [
+                {
+                    Name: "直选",
+                    Total: $('#txt_zx1').val(),
+                    TotalMoney: $('#txt_zxmoney1').val()
+                },
+                {
+                    Name: "组三",
+                    Total: $('#txt_zx2').val(),
+                    TotalMoney: $('#txt_zxmoney2').val()
+                },
+                {
+                    Name: "组六",
+                    Total: $('#txt_zx3').val(),
+                    TotalMoney: $('#txt_zxmoney3').val()
+                },
+            ],
+            Jm: '',
+            Gzm: [],
+            Dym: []
+        };
+
+        return JSON.stringify(res);
+    }
+</script>
+<style type="text/css">
+    .form-control-input {
+        width: 52px;
+        height: 28px;
+        line-height: 2;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 9pt;
+        padding-left: 5px;
+    }
+</style>
+
+<div style="margin-top: 20px; margin-right: 30px;">
+    <table class="form">
+        <tr>
+            <td class="formTitle">期数<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="Term" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">开机号<font face="宋体">*</font><font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                @*<input id="KaiJiHao" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+
+                <input name="txtKJH1" id="txtKJH1" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input name="txtKJH2" id="txtKJH2" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input name="txtKJH3" id="txtKJH3" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <span style="color: Red;">（必填：号码在01-09中取值，无值请填-1）</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">试机号<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                @*<input id="ShiJiHao" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />*@
+
+                <input name="txtSJH1" id="txtSJH1" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input name="txtSJH2" id="txtSJH2" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input name="txtSJH3" id="txtSJH3" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <span style="color: Red;">（必填：号码在01-09中取值，无值请填-1）</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">开奖号<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                @*<input id="OpenCode1" type="text" class="form-control" />*@
+                <input id="OpenCode1" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input id="OpenCode2" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input id="OpenCode3" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input id="OpenCode4" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <input id="OpenCode5" class="form-control-input" type="text" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')">&nbsp;&nbsp;
+                <span style="color: Red;">（必填：号码在01-09中取值）</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">开奖时间<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="OpenTime" type="text" class="form-control input-datepicker" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',readOnly:true})" isvalid="yes" checkexpession="NotNull"  />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">本期投注<font face="宋体">*</font></td>
+            <td class="formValue" colspan="3">
+                <input id="txt_tzmoney" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">直选注数<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zx1" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+            <td class="formTitle">直选金额<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zxmoney1" type="text" class="form-control" isvalid="yes" checkexpession="Num" value="1040" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">组三注数<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zx2" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+            <td class="formTitle">组三金额<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zxmoney2" type="text" class="form-control" isvalid="yes" checkexpession="Num" value="346" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+        <tr>
+            <td class="formTitle">组六注数<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zx3" type="text" class="form-control" isvalid="yes" checkexpession="Num" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+            <td class="formTitle">组六金额<font face="宋体">*</font></td>
+            <td class="formValue">
+                <input id="txt_zxmoney3" type="text" class="form-control" isvalid="yes" checkexpession="Num" value="173" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onblur="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+        </tr>
+    </table>
+</div>

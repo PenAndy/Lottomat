@@ -1,0 +1,233 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off"><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off"><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off"><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off"><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off"><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off"><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+            <th colspan="5" rowspan="2" width="227">开奖号码</th>
+            <th rowspan="2" width="29">和</br/>值</th>
+            <th colspan="18">和值走势</th>
+            <th rowspan="2" width="29">和</br/>尾</th>
+            <th colspan="10">和尾走势</th>
+        </tr>
+        <tr>
+            <th width="31">15<br>|<br>20</th>
+            <th width="31">21<br>|<br>25</th>
+            <th width="31">26<br>|<br>30</th>
+            <th width="31">31<br>|<br>35</th>
+            <th width="31">36<br>|<br>40</th>
+            <th width="31">41<br>|<br>45</th>
+            <th width="31">46<br>|<br>50</th>
+            <th width="31">51<br>|<br>55</th>
+            <th width="31">56<br>|<br>60</th>
+            <th width="31">61<br>|<br>65</th>
+            <th width="31">66<br>|<br>70</th>
+            <th width="31">71<br>|<br>75</th>
+            <th width="31">76<br>|<br>80</th>
+            <th width="31">81<br>|<br>85</th>
+            <th width="31">86<br>|<br>90</th>
+            <th width="31">91<br>|<br>95</th>
+            <th width="31">96<br>|<br>100</th>
+            <th width="31">101<br>|<br>105</th>
+            <th width="24">0</th>
+            <th width="24">1</th>
+            <th width="24">2</th>
+            <th width="24">3</th>
+            <th width="24">4</th>
+            <th width="24">5</th>
+            <th width="24">6</th>
+            <th width="24">7</th>
+            <th width="24">8</th>
+            <th width="24">9</th>
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><strong>选号1</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-square" pl="orange">15<br>|<br>20</td>
+            <td class="presele-square" pl="orange">21<br>|<br>25</td>
+            <td class="presele-square" pl="orange">26<br>|<br>30</td>
+            <td class="presele-square" pl="orange">31<br>|<br>35</td>
+            <td class="presele-square" pl="orange">36<br>|<br>40</td>
+            <td class="presele-square" pl="orange">41<br>|<br>45</td>
+            <td class="presele-square" pl="orange">46<br>|<br>50</td>
+            <td class="presele-square" pl="orange">51<br>|<br>55</td>
+            <td class="presele-square" pl="orange">56<br>|<br>60</td>
+            <td class="presele-square" pl="orange">61<br>|<br>65</td>
+            <td class="presele-square" pl="orange">66<br>|<br>70</td>
+            <td class="presele-square" pl="orange">71<br>|<br>75</td>
+            <td class="presele-square" pl="orange">76<br>|<br>80</td>
+            <td class="presele-square" pl="orange">81<br>|<br>85</td>
+            <td class="presele-square" pl="orange">86<br>|<br>90</td>
+            <td class="presele-square" pl="orange">91<br>|<br>95</td>
+            <td class="presele-square" pl="orange">96<br>|<br>100</td>
+            <td class="presele-square" pl="orange">101<br>|<br>105</td>
+            <td></td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="bgblue">3</td>
+            <td class="presele-square" pl="bgblue">4</td>
+            <td class="presele-square" pl="bgblue">5</td>
+            <td class="presele-square" pl="bgblue">6</td>
+            <td class="presele-square" pl="bgblue">7</td>
+            <td class="presele-square" pl="bgblue">8</td>
+            <td class="presele-square" pl="bgblue">9</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号2</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-square" pl="orange">15<br>|<br>20</td>
+            <td class="presele-square" pl="orange">21<br>|<br>25</td>
+            <td class="presele-square" pl="orange">26<br>|<br>30</td>
+            <td class="presele-square" pl="orange">31<br>|<br>35</td>
+            <td class="presele-square" pl="orange">36<br>|<br>40</td>
+            <td class="presele-square" pl="orange">41<br>|<br>45</td>
+            <td class="presele-square" pl="orange">46<br>|<br>50</td>
+            <td class="presele-square" pl="orange">51<br>|<br>55</td>
+            <td class="presele-square" pl="orange">56<br>|<br>60</td>
+            <td class="presele-square" pl="orange">61<br>|<br>65</td>
+            <td class="presele-square" pl="orange">66<br>|<br>70</td>
+            <td class="presele-square" pl="orange">71<br>|<br>75</td>
+            <td class="presele-square" pl="orange">76<br>|<br>80</td>
+            <td class="presele-square" pl="orange">81<br>|<br>85</td>
+            <td class="presele-square" pl="orange">86<br>|<br>90</td>
+            <td class="presele-square" pl="orange">91<br>|<br>95</td>
+            <td class="presele-square" pl="orange">96<br>|<br>100</td>
+            <td class="presele-square" pl="orange">101<br>|<br>105</td>
+            <td></td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="bgblue">3</td>
+            <td class="presele-square" pl="bgblue">4</td>
+            <td class="presele-square" pl="bgblue">5</td>
+            <td class="presele-square" pl="bgblue">6</td>
+            <td class="presele-square" pl="bgblue">7</td>
+            <td class="presele-square" pl="bgblue">8</td>
+            <td class="presele-square" pl="bgblue">9</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号3</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-square" pl="orange">15<br>|<br>20</td>
+            <td class="presele-square" pl="orange">21<br>|<br>25</td>
+            <td class="presele-square" pl="orange">26<br>|<br>30</td>
+            <td class="presele-square" pl="orange">31<br>|<br>35</td>
+            <td class="presele-square" pl="orange">36<br>|<br>40</td>
+            <td class="presele-square" pl="orange">41<br>|<br>45</td>
+            <td class="presele-square" pl="orange">46<br>|<br>50</td>
+            <td class="presele-square" pl="orange">51<br>|<br>55</td>
+            <td class="presele-square" pl="orange">56<br>|<br>60</td>
+            <td class="presele-square" pl="orange">61<br>|<br>65</td>
+            <td class="presele-square" pl="orange">66<br>|<br>70</td>
+            <td class="presele-square" pl="orange">71<br>|<br>75</td>
+            <td class="presele-square" pl="orange">76<br>|<br>80</td>
+            <td class="presele-square" pl="orange">81<br>|<br>85</td>
+            <td class="presele-square" pl="orange">86<br>|<br>90</td>
+            <td class="presele-square" pl="orange">91<br>|<br>95</td>
+            <td class="presele-square" pl="orange">96<br>|<br>100</td>
+            <td class="presele-square" pl="orange">101<br>|<br>105</td>
+            <td></td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="bgblue">3</td>
+            <td class="presele-square" pl="bgblue">4</td>
+            <td class="presele-square" pl="bgblue">5</td>
+            <td class="presele-square" pl="bgblue">6</td>
+            <td class="presele-square" pl="bgblue">7</td>
+            <td class="presele-square" pl="bgblue">8</td>
+            <td class="presele-square" pl="bgblue">9</td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off"><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off"><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off"><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off"><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off"><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off"><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off">
+    <label for="currentAnalysis">当前页统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+            <th colspan="5" rowspan="2" width="227">开奖号码</th>
+            <th rowspan="2" width="29">和</br/>值</th>
+            <th colspan="18">和值走势</th>
+            <th rowspan="2" width="29">和</br/>尾</th>
+            <th colspan="10">和尾走势</th>
+        </tr>
+        <tr>
+            <th width="31">15<br>|<br>20</th>
+            <th width="31">21<br>|<br>25</th>
+            <th width="31">26<br>|<br>30</th>
+            <th width="31">31<br>|<br>35</th>
+            <th width="31">36<br>|<br>40</th>
+            <th width="31">41<br>|<br>45</th>
+            <th width="31">46<br>|<br>50</th>
+            <th width="31">51<br>|<br>55</th>
+            <th width="31">56<br>|<br>60</th>
+            <th width="31">61<br>|<br>65</th>
+            <th width="31">66<br>|<br>70</th>
+            <th width="31">71<br>|<br>75</th>
+            <th width="31">76<br>|<br>80</th>
+            <th width="31">81<br>|<br>85</th>
+            <th width="31">86<br>|<br>90</th>
+            <th width="31">91<br>|<br>95</th>
+            <th width="31">96<br>|<br>100</th>
+            <th width="31">101<br>|<br>105</th>
+            <th width="24">0</th>
+            <th width="24">1</th>
+            <th width="24">2</th>
+            <th width="24">3</th>
+            <th width="24">4</th>
+            <th width="24">5</th>
+            <th width="24">6</th>
+            <th width="24">7</th>
+            <th width="24">8</th>
+            <th width="24">9</th>
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>

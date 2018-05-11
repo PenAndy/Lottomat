@@ -1,0 +1,175 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td colspan="3" class="blue-ban">
+                基本号个数在5~14之间，胆码在0~2个之间。
+            </td>
+        </tr>
+        <tr>
+            <td class="blue-one">
+                1、请选择<br>基本号码和胆码</br>
+            </td>
+            <td class="blue-two same">
+                <ul class="list">
+                    <li class="aloneli width420">
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">01</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">02</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">03</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">04</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">05</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">06</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">07</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">08</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">09</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">10</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">11</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">12</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">13</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">14</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">15</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">16</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">17</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">18</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">19</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">20</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">21</span>
+                        <span class="bigball grey-28" name="h" onclick="selectNum(this)">22</span><br />
+                        <span class="pick">基本号码：<input type="text" readonly="readonly" value="" id="jb" name="jb" /></span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three same">
+                <ul class="list">
+                    <li class="aloneli width420">
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">01</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">02</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">03</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">04</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">05</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">06</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">07</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">08</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">09</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">10</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">11</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">12</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">13</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">14</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">15</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">16</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">17</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">18</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">19</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">20</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">21</span>
+                        <span class="bigball grey-28" name="d" onclick="selectDM(this)">22</span><br />
+                        <span class="pick">胆码：<input type="text" readonly="readonly" value="" id="dm" name="dm" /></span>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                2、请选择缩水条件
+            </td>
+            <td class="grey-two same">
+                <ul class="list ssq">
+                    <li class="ballbox">
+                        <span>AC值：</span>
+                        <span type="checkbox" value="0" class="frame white">0</span>
+                        <span type="checkbox" value="1" class="frame white">1</span>
+                        <span type="checkbox" value="2" class="frame white">2</span>
+                        <span type="checkbox" value="3" class="frame white">3</span>
+                        <span type="checkbox" value="4" class="frame white">4</span>
+                        <span type="checkbox" value="5" class="frame white">5</span>
+                        <span type="checkbox" value="6" class="frame white">6</span>
+                        <input type="hidden" name="FilterName_108" id="FilterName_108" />
+                    </li>
+                    <li>
+                        首位号码的奇偶值：
+                        <input type="radio" value="奇数" class="radio" name="FilterName_109" /><label for="bjo1">奇数</label>
+                        <input type="radio" value="偶数" class="radio" name="FilterName_109" /><label for="bjo2">偶数</label>
+                        <input type="radio" value="不限" class="radio" name="FilterName_109" /><label for="bjo3">不限</label><br>
+                        <span class="suffix">(即开奖号码中的最小号码)</span>
+                    </li>
+                    <li>
+                        末位号码的奇偶值：
+                        <input type="radio" value="奇数" class="radio" name="FilterName_110" /><label for="ejo1">奇数</label>
+                        <input type="radio" value="偶数" class="radio" name="FilterName_110" /><label for="ejo2">偶数</label>
+                        <input type="radio" value="不限" class="radio" name="FilterName_110" /><label for="ejo3">不限</label><br>
+                        <span class="suffix">(即开奖号码中的最大号码)</span>
+                    </li>
+                    <li>
+                        和值：
+                        <input type="text" name="FilterName_111" id="FilterName_111" maxlength="3" class="return" />
+                        至
+                        <input type="text" name="FilterName_111" id="FilterName_111" maxlength="3" class="return" />
+                        <span class="suffix">(用键盘输入)</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three same">
+                <ul class="list ssq">
+                    <li class="ballbox">
+                        <span>奇偶比：</span>
+                        <span class="frame white-36">0:5</span>
+                        <span class="frame white-36">1:4</span>
+                        <span class="frame white-36">2:3</span>
+                        <span class="frame white-36">3:2</span>
+                        <span class="frame white-36">4:4</span>
+                        <span class="frame white-36">5:0</span>
+                        <input type="hidden" name="FilterName_112" id="FilterName_112" />
+                    </li>
+                    <li class="framebox">
+                        <span>大小比：</span>
+                        <span class="frame white-36">0:5</span>
+                        <span class="frame white-36">1:4</span>
+                        <span class="frame white-36">2:3</span>
+                        <span class="frame white-36">3:2</span>
+                        <span class="frame white-36">4:1</span>
+                        <span class="frame white-36">5:0</span><br>
+                        <span class="suffix">(约定11以上为大)</span>
+                        <input type="hidden" name="FilterName_113" id="FilterName_113" />
+                    </li>
+                    <li class="framebox">
+                        <span>质合比：</span>
+                        <span class="frame white-36" value="0:5">0:6</span>
+                        <span class="frame white-36" value="1:4">1:5</span>
+                        <span class="frame white-36" value="2:3">2:4</span>
+                        <span class="frame white-36" value="3:2">3:3</span>
+                        <span class="frame white-36" value="4:1">4:2</span>
+                        <span class="frame white-36" value="5:0">5:1</span>
+                        <input type="hidden" name="FilterName_114" id="FilterName_114" />
+                    </li>
+                    <li class="framebox">
+                        <span>连号组数：</span><br>
+                        <span class="frame white-80">无连号</span>
+                        <span class="frame white-80">1连号</span>
+                        <span class="frame white-80">2连号</span>
+                        <span class="frame white-80">3连号</span>
+                        <span class="frame white-80">4连号</span>
+                        <input type="hidden" name="FilterName_115" id="FilterName_115" />
+                    </li>
+                    <li class="ballbox">
+                        <span>每注中尾数不相同的投注号码 ：</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <input type="hidden" name="FilterName_116" id="FilterName_116" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="blue-one" style="width: 100%;">
+                <div class="but_1">
+                    <input type="image" name="imageField" id="imageField" src="/static/images/kjss.gif" onclick="return checkValue();" />
+                    <input type="image" name="imageField3" id="resetImage" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

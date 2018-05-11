@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C10920FE-8C74-4993-A7F4-1DA189DA842C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lottomat.Application.Entity</RootNamespace>
+    <AssemblyName>Lottomat.Application.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Lottomat.Application.Entity.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountEntity.cs" />
+    <Compile Include="AttachmentManage\AttachmentEntity.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormEntity.cs" />
+    <Compile Include="AuthorizeManage\ModuleFormInstanceEntity.cs" />
+    <Compile Include="AuthorizeManage\ViewModel\AuthorizeUrlModel.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="BaseManage\base_EnterpriseObjEntity.cs" />
+    <Compile Include="BaseManage\SiteTDKEntity.cs" />
+    <Compile Include="CommonEntity\NotInvestigationEntity.cs" />
+    <Compile Include="CommonEntity\OpenCodeModel.cs" />
+    <Compile Include="CommonEntity\TaskList.cs" />
+    <Compile Include="GalleryManage\ArtHotListParams.cs" />
+    <Compile Include="GalleryManage\ArtHotMenuParams.cs" />
+    <Compile Include="GalleryManage\ArtNewParams.cs" />
+    <Compile Include="GalleryManage\Tk_Gallery.cs" />
+    <Compile Include="GalleryManage\Tk_GalleryDetail.cs" />
+    <Compile Include="CommonEntity\BaseJson.cs" />
+    <Compile Include="GalleryManage\ArtInfoParams.cs" />
+    <Compile Include="GalleryManage\NewArtListParams.cs" />
+    <Compile Include="GalleryManage\TrendChartParams.cs" />
+    <Compile Include="InformationManage\AdvertisementEntity.cs" />
+    <Compile Include="InformationManage\ColorNews.cs" />
+    <Compile Include="InformationManage\GetClassiFicationNewsList.cs" />
+    <Compile Include="InformationManage\GetNewsList.cs" />
+    <Compile Include="InformationManage\NewsDetail.cs" />
+    <Compile Include="InformationManage\ToolsEntity.cs" />
+    <Compile Include="InformationManage\TrendChart.cs" />
+    <Compile Include="InformationManage\TrendChartEntity.cs" />
+    <Compile Include="InformationManage\ZTArticleDetailEntity.cs" />
+    <Compile Include="InformationManage\ZTArticleEntity.cs" />
+    <Compile Include="InformationManage\ZTColumnEntity.cs" />
+    <Compile Include="InformationManage\ZxNewsEntity.cs" />
+    <Compile Include="InformationManage\LabelEntity.cs" />
+    <Compile Include="LotteryNumberManage\AwardsEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF18x7XinJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF20x5HeBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF20x5ZheJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF22x5HeNanEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF25x7XinJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF26x5GuangDongEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF30x5HuBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF31x7FuJianEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF35x7LiaoNingEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF35x7XinJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF36x7GuangDongEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF36x7HeiLongJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF4J1HaiNanEntity.cs" />
+    <Compile Include="LotteryNumberManage\DF6J1ZheJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFDF6J1Entity.cs" />
+    <Compile Include="LotteryNumberManage\DFFC25x5AnHuiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFHC1GuangDongEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFHD15x5Entity.cs" />
+    <Compile Include="LotteryNumberManage\DFHYC2HeBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFHYC3HeBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFKLSCGuangXiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFLJFC22x5HeiLongJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFP62HeiLongJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFPL5HeBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFPL7HeBeiEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFSMHLHCHongKongEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFSZFCGuangDongEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFTC22x5FuJianEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFTC36x7FuJianEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFTC6J1HeiLongJiangEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFTC7WSJiangSuEntity.cs" />
+    <Compile Include="LotteryNumberManage\DFTTCx4ShangHaiEntity.cs" />
+    <Compile Include="LotteryNumberManage\GP11x5AnHuiEntity.cs" />
+    <Compile Include="LotteryNumberManage\GP11x5BeiJingEntity.cs" />
+    <Compile Include="LotteryNumberManage\KaiJiangDetailEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\BaseParameterEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\FeedbackArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\GetAdvertisementArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\HistoryLotteryArgEnyity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\HomeLotteryListByTypeCodeArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\IntroductionOfLotteryArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\LotteryKJHAndSJHArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\RemoveCacheArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\SaveAdvertisementArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\SystemTdkArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\SystemThreeElementsArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\TheLatestAwardArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\ThematicArticleListArg.cs" />
+    <Compile Include="LotteryNumberManage\Parameter\VerificationCodeArgEntity.cs" />
+    <Compile Include="LotteryNumberManage\QGFC3DEntity.cs" />
+    <Compile Include="LotteryNumberManage\QGFCQLCEntity.cs" />
+    <Compile Include="LotteryNumberManage\QGFCSSQEntity.cs" />
+    <Compile Include="LotteryNumberManage\QGTCDLTEntity.cs" />
+    <Compile Include="LotteryNumberManage\QGTCP3Entity.cs" />
+    <Compile Include="LotteryNumberManage\QGTCQXCEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\AdvertisementViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\AllLotteryListViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\BaseHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\DFCHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\FriendLinkViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPC11X5HistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPCK3HistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPCKL10FHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPCKL12HistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPCQTCHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\GPCSSCHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\HomeLotteryListViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\IntroductionOfLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\LotteryKJHAndSJHViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\QGCHistoryLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\RecommendationAndHotLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\SystemTdkViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\SystemThreeElementsViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\TodaysLotteryViewEntity.cs" />
+    <Compile Include="LotteryNumberManage\ViewModel\VerificationCodeViewEntity.cs" />
+    <Compile Include="PublicInfoManage\ResourcesEntity.cs" />
+    <Compile Include="PublicInfoManage\ScheduleEntity.cs" />
+    <Compile Include="PublicInfoManage\SystemNoticeEntity.cs" />
+    <Compile Include="SystemManage\AppKeyEntity.cs" />
+    <Compile Include="SystemManage\BaseFriendLinksEntity.cs" />
+    <Compile Include="PublicInfoManage\FileInfoEntity.cs" />
+    <Compile Include="PublicInfoManage\FileFolderEntity.cs" />
+    <Compile Include="PublicInfoManage\EmailAddresseeEntity.cs" />
+    <Compile Include="PublicInfoManage\EmailCategoryEntity.cs" />
+    <Compile Include="PublicInfoManage\EmailContentEntity.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeEntity.cs" />
+    <Compile Include="BaseManage\UserRelationEntity.cs" />
+    <Compile Include="AuthorizeManage\AuthorizeDataEntity.cs" />
+    <Compile Include="PublicInfoManage\NewsEntity.cs" />
+    <Compile Include="SystemManage\DataBaseBackupEntity.cs" />
+    <Compile Include="SystemManage\DataBaseTableFieldEntity.cs" />
+    <Compile Include="SystemManage\DataBaseLinkEntity.cs" />
+    <Compile Include="AuthorizeManage\FilterIPEntity.cs" />
+    <Compile Include="AuthorizeManage\FilterTimeEntity.cs" />
+    <Compile Include="SystemManage\AreaEntity.cs" />
+    <Compile Include="AuthorizeManage\ModuleEntity.cs" />
+    <Compile Include="AuthorizeManage\ModuleButtonEntity.cs" />
+    <Compile Include="AuthorizeManage\ModuleColumnEntity.cs" />
+    <Compile Include="BaseManage\UserEntity.cs" />
+    <Compile Include="BaseManage\DepartmentEntity.cs" />
+    <Compile Include="BaseManage\OrganizeEntity.cs" />
+    <Compile Include="BaseManage\RoleEntity.cs" />
+    <Compile Include="SystemManage\DataItemEntity.cs" />
+    <Compile Include="SystemManage\DataItemDetailEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemManage\FeedbackEntity.cs" />
+    <Compile Include="SystemManage\InterfaceEntity.cs" />
+    <Compile Include="SystemManage\LogEntity.cs" />
+    <Compile Include="SystemManage\ViewModel\DataItemModel.cs" />
+    <Compile Include="UserInfoModel.cs" />
+    <Compile Include="GalleryManage\ArtListParams.cs" />
+    <Compile Include="GalleryManage\TKColumnParams.cs" />
+    <Compile Include="ViewModel\ConsultationMangerModel\ClassiFication.cs" />
+    <Compile Include="ViewModel\ConsultationMangerModel\GetZX_NewsDetails.cs" />
+    <Compile Include="ViewModel\ConsultationMangerModel\News_Preview.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\GalleryNumberList.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\HotMenuModel.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\ImageInfoModel.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\ImageMenuInfoModel.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\MenuInfoModel.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\QueryAllDataModel.cs" />
+    <Compile Include="ViewModel\GallerMangerModel\TrendChartModel.cs" />
+    <Compile Include="ViewModel\Token_Preview.cs" />
+    <Compile Include="ViewModel\ToolsMangerModer\Tools_Preview.cs" />
+    <Compile Include="ViewModel\TrendChartModel\TrendChart_Preview.cs" />
+    <Compile Include="ViewModel\ZTArticleDetailViewModel.cs" />
+    <Compile Include="ViewModel\ZTArticleViewModel.cs" />
+    <Compile Include="ViewModel\ZTColumnViewModel.cs" />
+    <Compile Include="WebApp\appUserInfoModel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lottomat.Util\Lottomat.Util.Extension\Lottomat.Util.Extension.csproj">
+      <Project>{4b7dde80-dfa1-4938-93f8-3721e2c592b9}</Project>
+      <Name>Lottomat.Util.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lottomat.Util\Lottomat.Util\Lottomat.Utils.csproj">
+      <Project>{07aa2566-d0e5-47af-a17d-3b1c6aee598d}</Project>
+      <Name>Lottomat.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lottomat.Application.Code\Lottomat.Application.Code.csproj">
+      <Project>{9b10db87-130c-41d3-8687-1fac877db74a}</Project>
+      <Name>Lottomat.Application.Code</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

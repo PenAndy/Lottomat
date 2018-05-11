@@ -1,0 +1,235 @@
+﻿<!--走势图功能选择部分 begin-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th rowspan="6" class="sort_up" width="84"><strong>期号</strong></th>
+            <th rowspan="5" colspan="4">出号</th>
+            <th colspan="12">生肖</th>
+            <th colspan="4">季节</th>
+            <th colspan="4">方位</th>
+        </tr>
+        <tr class="bg-yellow">
+            <td colspan="2">鼠</td>
+            <td colspan="2">牛</td>
+            <td colspan="2">虎</td>
+            <td colspan="2">兔</td>
+            <td colspan="2">龙</td>
+            <td colspan="2">蛇</td>
+            <td colspan="4">春：01,02,03,04,05,06,07,08,09</td>
+            <td colspan="4">东：01,03,05,07,09,11,13,15,17</td>
+        </tr>
+        <tr class="white">
+            <td colspan="2">01,13,25</td>
+            <td colspan="2">02,14,26</td>
+            <td colspan="2">03,15,27</td>
+            <td colspan="2">04,16,28</td>
+            <td colspan="2">05,17,29</td>
+            <td colspan="2">06,18,30</td>
+            <td colspan="4">夏：10,11,12,13,14,15,16,17,18</td>
+            <td colspan="4">南：02,04,06,08,10,12,14,16,18</td>
+        </tr>
+        <tr class="bg-yellow">
+            <td colspan="2">马</td>
+            <td colspan="2">羊</td>
+            <td colspan="2">猴</td>
+            <td colspan="2">鸡</td>
+            <td colspan="2">狗</td>
+            <td colspan="2">猪</td>
+            <td colspan="4">秋：19,20,21,22,23,24,25,26,27</td>
+            <td colspan="4">西：19,21,23,25,27,29,31,33,35</td>
+        </tr>
+        <tr>
+            <td colspan="2">07,19,31</td>
+            <td colspan="2">08,20,32</td>
+            <td colspan="2">09,21,33</td>
+            <td colspan="2">10,22,34</td>
+            <td colspan="2">11,23,35</td>
+            <td colspan="2">12,24,36</td>
+            <td colspan="4">冬：28,29,30,31,32,33,34,35,36</td>
+            <td colspan="4">北：20,22,24,26,28,30,32,34,36</td>
+        </tr>
+        <tr>
+            <th width="38">号码</th>
+            <th width="38">生肖</th>
+            <th width="38">季节</th>
+            <th width="38">方位</th>
+            <th width="38">鼠</th>
+            <th width="38">牛</th>
+            <th width="38">虎</th>
+            <th width="38">兔</th>
+            <th width="38">龙</th>
+            <th width="38">蛇</th>
+            <th width="38">马</th>
+            <th width="38">羊</th>
+            <th width="38">猴</th>
+            <th width="38">鸡</th>
+            <th width="38">狗</th>
+            <th width="38">猪</th>
+            <th width="64">春</th>
+            <th width="64">夏</th>
+            <th width="64">秋</th>
+            <th width="64">冬</th>
+            <th width="64">东</th>
+            <th width="64">南</th>
+            <th width="64">西</th>
+            <th width="64">北</th>
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><strong>选号1</strong></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">鼠</td>
+            <td class="presele-ball" pl="red">牛</td>
+            <td class="presele-ball" pl="red">虎</td>
+            <td class="presele-ball" pl="red">兔</td>
+            <td class="presele-ball" pl="red">龙</td>
+            <td class="presele-ball" pl="red">蛇</td>
+            <td class="presele-ball" pl="red">马</td>
+            <td class="presele-ball" pl="red">羊</td>
+            <td class="presele-ball" pl="red">猴</td>
+            <td class="presele-ball" pl="red">鸡</td>
+            <td class="presele-ball" pl="red">狗</td>
+            <td class="presele-ball" pl="red">猪</td>
+            <td class="presele-ball" pl="blue">春</td>
+            <td class="presele-ball" pl="blue">夏</td>
+            <td class="presele-ball" pl="blue">秋</td>
+            <td class="presele-ball" pl="blue">冬</td>
+            <td class="presele-ball" pl="red">东</td>
+            <td class="presele-ball" pl="red">南</td>
+            <td class="presele-ball" pl="red">西</td>
+            <td class="presele-ball" pl="red">北</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号2</span></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">鼠</td>
+            <td class="presele-ball" pl="red">牛</td>
+            <td class="presele-ball" pl="red">虎</td>
+            <td class="presele-ball" pl="red">兔</td>
+            <td class="presele-ball" pl="red">龙</td>
+            <td class="presele-ball" pl="red">蛇</td>
+            <td class="presele-ball" pl="red">马</td>
+            <td class="presele-ball" pl="red">羊</td>
+            <td class="presele-ball" pl="red">猴</td>
+            <td class="presele-ball" pl="red">鸡</td>
+            <td class="presele-ball" pl="red">狗</td>
+            <td class="presele-ball" pl="red">猪</td>
+            <td class="presele-ball" pl="blue">春</td>
+            <td class="presele-ball" pl="blue">夏</td>
+            <td class="presele-ball" pl="blue">秋</td>
+            <td class="presele-ball" pl="blue">冬</td>
+            <td class="presele-ball" pl="red">东</td>
+            <td class="presele-ball" pl="red">南</td>
+            <td class="presele-ball" pl="red">西</td>
+            <td class="presele-ball" pl="red">北</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号3</span></td>
+            <td></td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="presele-ball" pl="red">鼠</td>
+            <td class="presele-ball" pl="red">牛</td>
+            <td class="presele-ball" pl="red">虎</td>
+            <td class="presele-ball" pl="red">兔</td>
+            <td class="presele-ball" pl="red">龙</td>
+            <td class="presele-ball" pl="red">蛇</td>
+            <td class="presele-ball" pl="red">马</td>
+            <td class="presele-ball" pl="red">羊</td>
+            <td class="presele-ball" pl="red">猴</td>
+            <td class="presele-ball" pl="red">鸡</td>
+            <td class="presele-ball" pl="red">狗</td>
+            <td class="presele-ball" pl="red">猪</td>
+            <td class="presele-ball" pl="blue">春</td>
+            <td class="presele-ball" pl="blue">夏</td>
+            <td class="presele-ball" pl="blue">秋</td>
+            <td class="presele-ball" pl="blue">冬</td>
+            <td class="presele-ball" pl="red">东</td>
+            <td class="presele-ball" pl="red">南</td>
+            <td class="presele-ball" pl="red">西</td>
+            <td class="presele-ball" pl="red">北</td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+    <input name="analysisbtn" id="historyAnalysis" type="radio" autocomplete="off" />
+    <label for="historyAnalysis">历史统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th rowspan="2" width="84">期号</th>
+            <th rowspan="2" colspan="4">出号</th>
+            <th colspan="12">生肖</th>
+            <th colspan="4">季节</th>
+            <th colspan="4">方位</th>
+
+        </tr>
+        <tr>
+            <th width="38">鼠</th>
+            <th width="38">牛</th>
+            <th width="38">虎</th>
+            <th width="38">兔</th>
+            <th width="38">龙</th>
+            <th width="38">蛇</th>
+            <th width="38">马</th>
+            <th width="38">羊</th>
+            <th width="38">猴</th>
+            <th width="38">鸡</th>
+            <th width="38">狗</th>
+            <th width="38">猪</th>
+            <th width="64">春</th>
+            <th width="64">夏</th>
+            <th width="64">秋</th>
+            <th width="64">冬</th>
+            <th width="64">东</th>
+            <th width="64">南</th>
+            <th width="64">西</th>
+            <th width="64">北</th>
+
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>
+<!--数据统计部分 end-->

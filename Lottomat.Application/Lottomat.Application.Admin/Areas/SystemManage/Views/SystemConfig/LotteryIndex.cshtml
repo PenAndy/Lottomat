@@ -1,0 +1,267 @@
+﻿@using Lottomat.Util
+@{
+    ViewBag.Title = "抓取彩票开奖号地址配置管理";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<script>
+    ;
+    $(function () {
+        dialogAlert("修改配置文件时请填入正确的参数值，错误的参数值可能对系统会造成未知的影响，因此一般情况下建议不要对其修改！", 7);
+
+        $("#__OTHER__URL__").val("");
+        $("#__OTHER__XPATH__").val("");
+        LoadData("DFC");
+
+        $(":radio").click(function () {
+            var which = $(this).val();
+            LoadData(which);
+
+            //点击栏目下拉后触发事件，获取标签下拉列表
+            $("#LottoryName-option li").click(function () {
+                //var cname = $("#LottoryName").attr('data-text');
+                var key = $("#LottoryName").attr('data-value');
+                $.AjaxRequest({
+                    url: "/SystemManage/SystemConfig/GetConfigByKey",
+                    param: {
+                        key: key
+                    },
+                    type: "post",
+                    dataType: "json",
+                    async: true,
+                    success: function (req) {
+                        if (req) {
+                            if (req.type == 1) {
+                                var data = req.resultdata.split("^");
+
+                                $("#__OTHER__URL__").val(data[0]);
+                                $("#__OTHER__XPATH__").val(data[1]);
+                            } else {
+                                dialogMsg(req.message, 2, 1000);
+                            }
+                        }
+                    }
+                });
+            });
+        });
+
+        function LoadData(which) {
+            $("#LottoryName").empty();
+
+            $("#LottoryName").ComboBox({
+                param: { EnCode: which },
+                url: "../../SystemManage/DataItemDetail/GetDataItemListJson",
+                description: "== 请选择 ==",
+                id: "SimpleSpelling",
+                text: "ItemName",
+                //title: "ItemValue",
+                height: "530px"
+            });
+        }
+    });
+
+    function btn_save() {
+        var key = $("#LottoryName").attr('data-value');
+        saveConfig("__" + key + "__URL__", $("#__OTHER__URL__").val());
+        saveConfig("__" + key + "__XPATH__", $("#__OTHER__XPATH__").val());
+
+        var val = $('#AutoAddNewestLottery').val() + "," + key;
+        saveConfig("AutoAddNewestLottery", val);
+        $('#AutoAddNewestLottery').val(val);
+
+        $("#__OTHER__URL__").val("");
+        $("#__OTHER__XPATH__").val("");
+    }
+
+    //保存
+    function saveConfig(key, val) {
+        $.AjaxRequest({
+            url: "/SystemManage/SystemConfig/SaveConfig",
+            param: {
+                key: key,
+                value: val
+            },
+            type: "post",
+            dataType: "json",
+            async: true,
+            success: function (req) {
+                if (req) {
+                    //var data = eval('(' + req + ')');
+                    if (req.type == 1) {
+                        dialogMsg(req.message, 1, 1000);
+                    } else {
+                        dialogMsg(req.message, 2, 1000);
+                    }
+                }
+            }
+        });
+    }
+</script>
+<style type="text/css">
+    .form-control-input {
+        width: 500px;
+        height: 28px;
+        line-height: 2;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 9pt;
+        padding-left: 5px;
+    }
+
+    .form-control-input-nopadding {
+        width: 500px;
+        height: 28px;
+        line-height: 2;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        font-size: 9pt;
+    }
+</style>
+<div class="gridPanel">
+    <div class="border" id="desktop" style="margin: 10px 10px 0 10px; background: #fff; overflow: auto;">
+        <div class="portal-panel">
+            <div class="row" style="overflow: hidden; margin-bottom: 10px;">
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-cogs"></i>&nbsp;&nbsp;全国彩开奖号地址配置管理
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <table class="form">
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">双色球：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__SSQ__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__SSQ__URL__")" onblur="saveConfig('__SSQ__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__SSQ__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__SSQ__XPATH__")" onblur="saveConfig('__SSQ__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">福彩3D：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__FC3D__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__FC3D__URL__")" onblur="saveConfig('__FC3D__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__FC3D__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__FC3D__XPATH__")" onblur="saveConfig('__FC3D__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">七乐彩：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__QLC__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__QLC__URL__")" onblur="saveConfig('__QLC__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__QLC__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__QLC__XPATH__")" onblur="saveConfig('__QLC__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">排列三：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__PL3__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__PL3__URL__")" onblur="saveConfig('__PL3__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__PL3__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__PL3__XPATH__")" onblur="saveConfig('__PL3__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">大乐透：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__DLT__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__DLT__URL__")" onblur="saveConfig('__DLT__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__DLT__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__DLT__XPATH__")" onblur="saveConfig('__DLT__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formTitle" rowspan="2"><span style="font-weight: bold">七星彩：</span></td>
+                                <td class="formValue">
+                                    地&nbsp;&nbsp;&nbsp;址：<input id="__QXC__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__QXC__URL__")" onblur="saveConfig('__QXC__URL__',this.value)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="formValue">
+                                    XPath：<input id="__QXC__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="@ConfigHelper.GetValue("__QXC__XPATH__")" onblur="saveConfig('__QXC__XPATH__',this.value)" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="width: 50%; float: left;">
+                    <div class="portal-panel-title">
+                        <i class="fa fa-glass"></i>&nbsp;&nbsp;其他开奖号地址配置管理
+                    </div>
+                    <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                        <div class="titlePanel" style="border-bottom: 1px solid #cccccc ">
+                            <div class="toolbar">
+                                <div class="btn-group">
+                                    <a id="lr-replace" class="btn btn-default" onclick="reload()"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                                    <a id="lr-save" class="btn btn-default" onclick="btn_save()"><i class="fa fa-plus"></i>&nbsp;保存</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gridPanel">
+                            <table class="form">
+                                <tr>
+                                    <td class="formTitle"><span style="font-weight: bold">彩种：</span></td>
+                                    <td class="formValue">
+                                        <input type="radio" name="radio-lottory-type" checked="checked" value="DFC" style="cursor: pointer" /><span>地方彩&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <input type="radio" name="radio-lottory-type" value="GPC11X5" style="cursor: pointer" /><span>11选5&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <input type="radio" name="radio-lottory-type" value="GPCK3" style="cursor: pointer" /><span>快3&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <input type="radio" name="radio-lottory-type" value="GPCKL12" style="cursor: pointer" /><span>快乐12&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <input type="radio" name="radio-lottory-type" value="GPCKLSF" style="cursor: pointer" /><span>快乐十分&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <input type="radio" name="radio-lottory-type" value="GPCQTC" style="cursor: pointer" /><span>其他彩种</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="formTitle"><span style="font-weight: bold">彩票名称：</span></td>
+                                    <td class="formValue">
+                                        <div id="LottoryName" type="select" class="ui-select form-control-input-nopadding"></div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="formTitle"><span style="font-weight: bold">抓取地址：</span></td>
+                                    <td class="formValue">
+                                        <input id="__OTHER__URL__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="formTitle"><span style="font-weight: bold">XPath：</span></td>
+                                    <td class="formValue">
+                                        <input id="__OTHER__XPATH__" type="text" class="form-control-input" isvalid="yes" checkexpession="NotNull" value="" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="formTitle"><span style="font-weight: bold">自动生成记录：</span></td>
+                                    <td class="formValue">
+                                        <input id="AutoAddNewestLottery" type="hidden" value="@ConfigHelper.GetValue("AutoAddNewestLottery")" readonly="readonly"/>
+                                        <span>@ConfigHelper.GetValue("AutoAddNewestLottery")</span>
+                                        @*<textarea id="AutoAddNewestLottery" class="form-control" rows="5" value="@ConfigHelper.GetValue("AutoAddNewestLottery")" ></textarea>*@
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

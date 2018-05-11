@@ -1,0 +1,107 @@
+﻿<table>
+    <tr>
+        <td class="blue-three half">
+            <ul class="list array bot-line" style="height: 322px;" id="leftul">
+                <li>
+                    <input type="radio" name="r1" value="0" class="radio" checked="checked" onclick="checkedOther1(this);" />&nbsp;&nbsp;鼠标点击号码小框，或直接在下面大框里用键盘输入号码
+                </li>
+                <li class="ballbox width420">
+                    <div class="red">
+                        红球
+                    </div>
+                    <div id="cReds" class="div">
+                    </div>
+                </li>
+                <li class="ballbox width320">
+                    <div class="wblue">
+                        蓝球
+                    </div>
+                    <div id="cBlues" class="div">
+                    </div>
+                </li>
+            </ul>
+            <ul class="list array bot-line">
+                <li>
+                    <div class="red">
+                        红球
+                    </div>
+                    <div id="tReds">
+                    </div>
+                </li>
+                <li>
+                    <div class="wblue">
+                        蓝球
+                    </div>
+                    <div id="tBlues">
+                    </div>
+                </li>
+            </ul>
+            <ul class="list array">
+                <li>
+                    您选择了<input type="text" class="text" name="red_n" readonly="readonly" value="0" />
+                    个红球，<input type="text" class="text" name="blue_n" readonly="readonly" value="0" />个蓝球
+                </li>
+            </ul>
+        </td>
+        <td class="blue-three half">
+            <ul class="list array selected" id="rightul">
+                <li>
+                    <input type="radio" name="r1" value="1" class="radio" onclick="checkedOther1(this);" />多注批量对比
+                </li>
+                <li>请批量粘贴或输入您的号码，红球间用空格分隔，并用 + 号表示蓝号（如无 + 号，表示不考虑蓝球）。用回车表示下面一注。</li>
+                <li>
+                    例如：输入单式批量（红球与蓝球）<br>
+                    <span>01 02 03 04 05 06+01</span><br>
+                    <span>02 03 04 05 06 07+03</span>
+                </li>
+                <li>
+                    例如：输入小复式批量（只要红球）<br>
+                    <span>01 02 03 04 05 06 07 08</span><br>
+                    <span>02 03 04 05 06 07 08 09</span>
+                </li>
+                <li>
+                    <textarea class="textarea" name="txtRedBlue"></textarea>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr height="5"></tr>
+    <tr>
+        <td colspan="3" class="blue-one" style="width: 100%;">
+            <div class="but_1">
+                <img src="/static/images/ksjs.gif" onclick="DRTcompare.Calculate_onClick();" />
+                <img src="/static/images/resetss.gif" onclick="DRTcompare.Window_onLoad();" class="last" />
+            </div>
+        </td>
+    </tr>
+</table>
+<h2>
+    开奖对比
+</h2>
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="contrast">
+    <tbody>
+        <tr>
+            <td colspan="3" class="grey-ban">
+                您选择的号码在历史上：
+            </td>
+        </tr>
+        <tr id="out">
+            <td width="600" colspan="2" style="vertical-align: top" class="con_r">
+                <div id="result1">
+                </div>
+            </td>
+            <td width="600" id="result2" class="con_date">
+                <div id="result21" class="bot-line">
+                    <input name="b4" type="button" class="button" />
+                </div>
+                <div id="result22">
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

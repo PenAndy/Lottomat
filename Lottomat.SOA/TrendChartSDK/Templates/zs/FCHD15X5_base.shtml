@@ -1,0 +1,287 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th width="60" rowspan="2" class="sort_up"><strong>期号</strong></th>
+            <th colspan="5">一区</th>
+            <th colspan="5">二区</th>
+            <th colspan="5">三区</th>
+            <th rowspan="2" width="45">三区比</th>
+            <th colspan="6">一区个数走势</th>
+            <th colspan="6">二区个数走势</th>
+            <th colspan="6">三区个数走势</th>
+            <th rowspan="2" width="23">和<br />值</th>
+            <th rowspan="2" width="45">大小比</th>
+            <th rowspan="2" width="45">奇偶比</th>
+            <th rowspan="2" width="45">012路<br />个数比</th>
+            <th rowspan="2" width="23">跨<br />度</th>
+            <th rowspan="2" width="23">AC<br />值</th>
+            <th rowspan="2" width="23">重<br />号</th>
+            <th rowspan="2" width="23">连<br />号</th>
+        </tr>
+        <tr>
+            <th width="27">01</th>
+            <th width="27">02</th>
+            <th width="27">03</th>
+            <th width="27">04</th>
+            <th width="27">05</th>
+            <th width="27">06</th>
+            <th width="27">07</th>
+            <th width="27">08</th>
+            <th width="27">09</th>
+            <th width="27">10</th>
+            <th width="27">11</th>
+            <th width="27">12</th>
+            <th width="27">13</th>
+            <th width="27">14</th>
+            <th width="27">15</th>
+            <th width="19">0</th>
+            <th width="19">1</th>
+            <th width="19">2</th>
+            <th width="19">3</th>
+            <th width="19">4</th>
+            <th width="19">5</th>
+            <th width="19">0</th>
+            <th width="19">1</th>
+            <th width="19">2</th>
+            <th width="19">3</th>
+            <th width="19">4</th>
+            <th width="19">5</th>
+            <th width="19">0</th>
+            <th width="19">1</th>
+            <th width="19">2</th>
+            <th width="19">3</th>
+            <th width="19">4</th>
+            <th width="19">5</th>
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><strong>选号1</strong></td>
+
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td class="presele-ball" pl="red">12</td>
+            <td class="presele-ball" pl="red">13</td>
+            <td class="presele-ball" pl="red">14</td>
+            <td class="presele-ball" pl="red">15</td>
+            <td></th>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td class="presele-ball" pl="red">0</td>
+            <td class="presele-ball" pl="red">1</td>
+            <td class="presele-ball" pl="red">2</td>
+            <td class="presele-ball" pl="red">3</td>
+            <td class="presele-ball" pl="red">4</td>
+            <td class="presele-ball" pl="red">5</td>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        <tr class="presele">
+            <td class="presele-title"><span>选号2</span></td>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td class="presele-ball" pl="red">12</td>
+            <td class="presele-ball" pl="red">13</td>
+            <td class="presele-ball" pl="red">14</td>
+            <td class="presele-ball" pl="red">15</td>
+            <td></th>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td class="presele-ball" pl="red">0</td>
+            <td class="presele-ball" pl="red">1</td>
+            <td class="presele-ball" pl="red">2</td>
+            <td class="presele-ball" pl="red">3</td>
+            <td class="presele-ball" pl="red">4</td>
+            <td class="presele-ball" pl="red">5</td>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><span>选号3</span></td>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-ball" pl="red">11</td>
+            <td class="presele-ball" pl="red">12</td>
+            <td class="presele-ball" pl="red">13</td>
+            <td class="presele-ball" pl="red">14</td>
+            <td class="presele-ball" pl="red">15</td>
+            <td></th>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td class="presele-ball" pl="red">0</td>
+            <td class="presele-ball" pl="red">1</td>
+            <td class="presele-ball" pl="red">2</td>
+            <td class="presele-ball" pl="red">3</td>
+            <td class="presele-ball" pl="red">4</td>
+            <td class="presele-ball" pl="red">5</td>
+            <td class="presele-ball" pl="blue">0</td>
+            <td class="presele-ball" pl="blue">1</td>
+            <td class="presele-ball" pl="blue">2</td>
+            <td class="presele-ball" pl="blue">3</td>
+            <td class="presele-ball" pl="blue">4</td>
+            <td class="presele-ball" pl="blue">5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+    <input name="analysisbtn" id="historyAnalysis" type="radio" autocomplete="off" />
+    <label for="historyAnalysis">历史统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th width="60" rowspan="2"><strong>数据统计</strong></th>
+            <th colspan="5">一区</th>
+            <th colspan="5">二区</th>
+            <th colspan="5">三区</th>
+            <th rowspan="2" width="45">三区比</th>
+            <th colspan="6">一区个数走势</th>
+            <th colspan="6">二区个数走势</th>
+            <th colspan="6">三区个数走势</th>
+            <th rowspan="2" width="23">和<br />值</th>
+            <th rowspan="2" width="45">大小比</th>
+            <th rowspan="2" width="45">奇偶比</th>
+            <th rowspan="2" width="45">012路<br />个数比</th>
+            <th rowspan="2" width="23">跨<br />度</th>
+            <th rowspan="2" width="23">AC<br />值</th>
+            <th rowspan="2" width="23">重<br />号</th>
+            <th rowspan="2" width="23">连<br />号</th>
+        </tr>
+        <tr>
+            <th width="23">01</th>
+            <th width="23">02</th>
+            <th width="23">03</th>
+            <th width="23">04</th>
+            <th width="23">05</th>
+            <th width="23">06</th>
+            <th width="23">07</th>
+            <th width="23">08</th>
+            <th width="23">09</th>
+            <th width="23">10</th>
+            <th width="23">11</th>
+            <th width="23">12</th>
+            <th width="23">13</th>
+            <th width="23">14</th>
+            <th width="23">15</th>
+            <th width="23">0</th>
+            <th width="23">1</th>
+            <th width="23">2</th>
+            <th width="23">3</th>
+            <th width="23">4</th>
+            <th width="23">5</th>
+            <th width="23">0</th>
+            <th width="23">1</th>
+            <th width="23">2</th>
+            <th width="23">3</th>
+            <th width="23">4</th>
+            <th width="23">5</th>
+            <th width="23">0</th>
+            <th width="23">1</th>
+            <th width="23">2</th>
+            <th width="23">3</th>
+            <th width="23">4</th>
+            <th width="23">5</th>
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>

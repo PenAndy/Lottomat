@@ -1,0 +1,216 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<table class="chartTable" id="chartBody">
+    <thead>
+        <tr>
+            <th rowspan="2" width="84" class="sort_up"><strong>期号</strong></th>
+            <th rowspan="2" colspan="10" width="310">开奖号码</th>
+            <th colspan="10">亚军号码分布</th>
+            <th colspan="2">奇偶</th>
+            <th colspan="2">大小</th>
+            <th colspan="2">质合</th>
+            <th colspan="3">012</th>
+            <th colspan="3">升平降</th>
+        </tr>
+        <tr>
+            <th width="32">01</th>
+            <th width="32">02</th>
+            <th width="32">03</th>
+            <th width="32">04</th>
+            <th width="32">05</th>
+            <th width="32">06</th>
+            <th width="32">07</th>
+            <th width="32">08</th>
+            <th width="32">09</th>
+            <th width="32">10</th>
+            <th width="42">奇</th>
+            <th width="42">偶</th>
+            <th width="42">大</th>
+            <th width="42">小</th>
+            <th width="42">质</th>
+            <th width="42">合</th>
+            <th width="42">0</th>
+            <th width="42">1</th>
+            <th width="42">2</th>
+            <th width="42">升</th>
+            <th width="42">平</th>
+            <th width="42">降</th>
+        </tr>
+    </thead>
+    <tbody id="chartData">
+        <!--@@chartData-->
+    </tbody>
+    <!--模拟选号框-->
+    <tbody id="preseleBody">
+        <tr class="presele">
+            <td class="presele-title"><strong>选号1</strong></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-square" pl="orange">奇</td>
+            <td class="presele-square" pl="orange">偶</td>
+            <td class="presele-square" pl="bgblue">大</td>
+            <td class="presele-square" pl="bgblue">小</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="orange">升</td>
+            <td class="presele-square" pl="orange">平</td>
+            <td class="presele-square" pl="orange">降</td>
+        <tr class="presele">
+            <td class="presele-title"><strong>选号2</strong></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-square" pl="orange">奇</td>
+            <td class="presele-square" pl="orange">偶</td>
+            <td class="presele-square" pl="bgblue">大</td>
+            <td class="presele-square" pl="bgblue">小</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="orange">升</td>
+            <td class="presele-square" pl="orange">平</td>
+            <td class="presele-square" pl="orange">降</td>
+        </tr>
+        <tr class="presele">
+            <td class="presele-title"><strong>选号3</strong></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td width="32"></td>
+            <td class="presele-ball" pl="red">01</td>
+            <td class="presele-ball" pl="red">02</td>
+            <td class="presele-ball" pl="red">03</td>
+            <td class="presele-ball" pl="red">04</td>
+            <td class="presele-ball" pl="red">05</td>
+            <td class="presele-ball" pl="red">06</td>
+            <td class="presele-ball" pl="red">07</td>
+            <td class="presele-ball" pl="red">08</td>
+            <td class="presele-ball" pl="red">09</td>
+            <td class="presele-ball" pl="red">10</td>
+            <td class="presele-square" pl="orange">奇</td>
+            <td class="presele-square" pl="orange">偶</td>
+            <td class="presele-square" pl="bgblue">大</td>
+            <td class="presele-square" pl="bgblue">小</td>
+            <td class="presele-square" pl="orange">质</td>
+            <td class="presele-square" pl="orange">合</td>
+            <td class="presele-square" pl="bgblue">0</td>
+            <td class="presele-square" pl="bgblue">1</td>
+            <td class="presele-square" pl="bgblue">2</td>
+            <td class="presele-square" pl="orange">升</td>
+            <td class="presele-square" pl="orange">平</td>
+            <td class="presele-square" pl="orange">降</td>
+        </tr>
+    </tbody>
+</table>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+</div>
+<!--数据统计部分 beign-->
+<table class="staticTable">
+    <thead>
+        <tr>
+            <th rowspan="2" width="84" class="sort_up"><strong>期号</strong></th>
+            <th rowspan="2" colspan="3" width="159">开奖号码</th>
+            <th colspan="10">亚军号码分布</th>
+            <th colspan="2">奇偶</th>
+            <th colspan="2">大小</th>
+            <th colspan="2">质合</th>
+            <th colspan="3">012</th>
+            <th colspan="3">升平降</th>
+        </tr>
+        <tr>
+            <th width="41">01</th>
+            <th width="41">02</th>
+            <th width="41">03</th>
+            <th width="41">04</th>
+            <th width="41">05</th>
+            <th width="41">06</th>
+            <th width="41">07</th>
+            <th width="41">08</th>
+            <th width="41">09</th>
+            <th width="41">10</th>
+            <th width="44">奇</th>
+            <th width="44">偶</th>
+            <th width="44">大</th>
+            <th width="44">小</th>
+            <th width="44">质</th>
+            <th width="44">合</th>
+            <th width="44">0</th>
+            <th width="44">1</th>
+            <th width="44">2</th>
+            <th width="44">升</th>
+            <th width="44">平</th>
+            <th width="44">降</th>
+        </tr>
+    </thead>
+    <!--@@localMissData-->
+    <!--@@missData-->
+</table>
+<script>$("td.red.bold,td.bg-yellow").each(function(){var n = parseInt($(this).text());if(!isNaN(n) && n<10)$(this).text("0"+n);})</script>

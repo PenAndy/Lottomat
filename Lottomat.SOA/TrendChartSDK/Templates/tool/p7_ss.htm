@@ -1,0 +1,283 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td colspan="3" class="blue-ban">
+                1、组号：在下面的两个框中按要求分析输入3位的大底号
+            </td>
+        </tr>
+        <tr id="dingwei">
+            <td class="blue-one">
+                组号
+            </td>
+            <td class="blue-two same">
+                <ul class="list">
+                    <li class="bold">
+                        <span>七星彩的前五位组选或直选</span>
+                    </li>
+                    <li style="height: auto;">
+                        <textarea name="txtq5" class="textarea" id="txtq5"></textarea>
+                    </li>
+                    <li style="height: auto;">
+                        <span style="font-size: 16px;">类型:</span>
+                        <input type="radio" value="直选" name="radmo5" checked="checked" /><label class="normal">直选</label>
+                        <input type="button" value="清除" class="false" onclick="$('#txtq5').val('');" />
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three same">
+                <ul class="list">
+                    <li class="bold">
+                        <span id="FilterName_19_0">七星彩最末三位组选或直选</span>
+                    </li>
+                    <li style="height: auto;">
+                        <textarea name="txtm3" class="textarea" id="txtm3"></textarea>
+                    </li>
+                    <li style="height: auto;">
+                        <span style="font-size: 16px;">类型:</span>
+                        <input type="radio" name="radmo3" value="直选" /><label>直选</label>
+                        <input type="radio" name="radmo3" value="组选" checked="checked" /><label>组选</label>
+                        <input type="button" value="清除" class="false" onclick="$('#txtm3').val('');" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="grey-ban">
+                2、缩水：
+            </td>
+        </tr>
+        <tr>
+            <td class="grey-one">
+                和值012路形态过滤
+            </td>
+            <td class="grey-two" colspan="2">
+                <ul class="list">
+                    <li>
+                        <input name="FilterName_326" id="FilterName_326_1" value="包含选中" type="radio" /><label for="FilterName_326_1">包含选中</label>
+                        <input name="FilterName_326" id="FilterName_326_0" value="排除选中" checked="checked" type="radio" /><label for="FilterName_326_0" class="bold red">排除选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame blue-80">0路和值</span>
+                        <span class="frame white-80">1路和值</span>
+                        <span class="frame white-80">2路和值</span>
+                        <input name="FilterName_327" id="FilterName_327_0" value="" type="hidden" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                杀号过滤
+            </td>
+            <td class="blue-two" colspan="2">
+                <ul class="list top10">
+                    <li>
+                        <input name="FilterName_332" id="FilterName_332_0" value="排除选中" checked="checked" type="radio" /><label for="FilterName_332_0" class="bold red">排除选中</label>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">百万位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_333" id="Hidden2" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">十万位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_564" id="FilterName_564" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">万位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_565" id="FilterName_565" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">千位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_566" id="FilterName_566" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">百位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_567" id="FilterName_567" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">十位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_568" id="FilterName_568" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span class="bww">个位：</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input name="FilterName_569" id="FilterName_569" value="" type="hidden" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                比例过滤
+            </td>
+            <td class="grey-two" colspan="2">
+                <ul class="list">
+                    <li>
+                        <input name="FilterName_328" id="FilterName_328_0" value="排除选中" checked="checked" type="radio" /><label class="bold red" for="FilterName_328_0">排除选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span>奇偶比：</span>
+                        <span class="frame white-36">0:7</span>
+                        <span class="frame white-36">1:6</span>
+                        <span class="frame white-36">2:5</span>
+                        <span class="frame white-36">3:4</span>
+                        <span class="frame white-36">4:3</span>
+                        <span class="frame white-36">5:2</span>
+                        <span class="frame white-36">6:1</span>
+                        <span class="frame white-36">7:0</span>
+                        <input name="FilterName_329" id="FilterName_329" value="" type="hidden" />
+                    </li>
+                    <li class="framebox">
+                        <input name="FilterName_324" id="FilterName_324" value="排除选中" checked="checked" type="radio" style="display: none" />
+                        <span>大小比：</span>
+                        <span class="frame white-36">0:7</span>
+                        <span class="frame white-36">1:6</span>
+                        <span class="frame white-36">2:5</span>
+                        <span class="frame white-36">3:4</span>
+                        <span class="frame white-36">4:3</span>
+                        <span class="frame white-36">5:2</span>
+                        <span class="frame white-36">6:1</span>
+                        <span class="frame white-36">7:0</span>
+                        <input name="FilterName_325" id="FilterName_325" value="" type="hidden" />
+                    </li>
+                    <li class="framebox">
+                        <input name="FilterName_334" id="FilterName_334" value="排除选中" checked="checked" type="radio" style="display: none" />
+                        <span>质合比：</span>
+                        <span class="frame white-36">0:7</span>
+                        <span class="frame white-36">1:6</span>
+                        <span class="frame white-36">2:5</span>
+                        <span class="frame white-36">3:4</span>
+                        <span class="frame white-36">4:3</span>
+                        <span class="frame white-36">5:2</span>
+                        <span class="frame white-36">6:1</span>
+                        <span class="frame white-36">7:0</span>
+                        <input name="FilterName_335" id="FilterName_335" value="" type="hidden" />
+                    </li>
+                    <br>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                任意排序和尾过滤
+            </td>
+            <td class="blue-two" colspan="2">
+                <ul class="list">
+                    <li>
+                        <input name="FilterName_330" id="FilterName_330_1" value="包含选中" type="radio" /><label for="FilterName_330_1">包含选中</label>
+                        <input name="FilterName_330" id="FilterName_330_0" value="排除选中" checked="checked" type="radio" /><label for="FilterName_330_0" class="bold red">排除选中</label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span>
+                        <span class="frame white">1</span>
+                        <span class="frame white">2</span>
+                        <span class="frame white">3</span>
+                        <span class="frame white">4</span>
+                        <span class="frame white">5</span>
+                        <span class="frame white">6</span>
+                        <span class="frame white">7</span>
+                        <span class="frame white">8</span>
+                        <span class="frame white">9</span>
+                        <input name="FilterName_331" id="FilterName_331" value="" type="hidden" />
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td colspan="3" class="blue-one" style="width: 100%;">
+                <div class="but_1">
+                    <input type="image" name="imageField" id="imageField" src="/static/images/kjss.gif" />
+                    <input type="image" name="imageField3" id="resetImage" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,540 @@
+﻿<table>
+    <tbody id="toolBody">
+        <tr>
+            <td class="blue-one">
+                定位
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">
+                        <span>1、请选择投注号码(如果使用大底，该项可不选)</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>百位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_bw" id="FilterName_bw" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>十位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_sw" id="FilterName_sw" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>个位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_gw" id="FilterName_gw" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    请选择你要过滤缩水的号码。<br>
+                    （实际上，开哪一个号码都是很正常的。因此我们在选择号码时，建议大家使用“全选”功能，把这些号码都选中，然后再使用下面提供的过滤功能来缩水，减少投注号的注数）
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                大底
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">
+                        <span id="FilterName_19_0">请在以下方框中输入你的大底号，两注号码之间用一个空格或分号(;)分开：</span>
+                    </li>
+                    <li style="height: auto;">
+                        <textarea name="FilterName_dadi" id="FilterName_dadi_0" class="textarea"></textarea>
+                    </li>
+                    <li style="height: auto;">
+                        <span style="font-size: 16px;">类型:</span>
+                        <input name="FilterName_zhizuxuan" id="FilterName_zhizuxuan_0" type="radio" checked="checked" value="0" />
+                        <label class="normal" for="FilterName_zhizuxuan_0">
+                            直选
+                        </label>
+                        <input name="FilterName_zhizuxuan" id="FilterName_zhizuxuan_1" type="radio" value="1" />
+                        <label class="normal" for="FilterName_zhizuxuan_1">
+                            组选
+                        </label>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    如果定位已经选择了号码，则不必选择使用大底进行过滤
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    杀号过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">2、号码过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_502' id='FilterName_502_0' type='radio' value='排除选中' checked>
+                        <label for='FilterName_502_0' class='red-text'>
+                            排除选中
+                        </label>
+                    </li>
+                    <li class="ballbox">
+                        <span>百位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_503" id="FilterName_503" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>十位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_504" id="FilterName_504" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>个位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_505" id="FilterName_505" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    如有专家提供杀号百位：1345，十位：236，个位：1289，有了这个杀号功能后，就可以把号排除掉，按百、十、个位分别选中。事实上，过滤的号码越多，杀掉中奖号的可能性就越大。建议此区慎用。
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    胆码过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">3、胆码过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_506' id='FilterName_506_0' type='radio' value='包含选中' checked />
+                        <label for='FilterName_506_0' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="ballbox">
+                        <span>百位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_507" id="FilterName_507" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>十位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_509" id="FilterName_509" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                    <li class="ballbox">
+                        <span>个位:</span>
+                        <span class="bigball grey">0</span>
+                        <span class="bigball grey">1</span>
+                        <span class="bigball grey">2</span>
+                        <span class="bigball grey">3</span>
+                        <span class="bigball grey">4</span>
+                        <span class="bigball grey">5</span>
+                        <span class="bigball grey">6</span>
+                        <span class="bigball grey">7</span>
+                        <span class="bigball grey">8</span>
+                        <span class="bigball grey">9</span>
+                        <input type="hidden" name="FilterName_510" id="FilterName_510" />
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    百、十、个位表示该胆码是否在这些位置上出现 ，比如有专家说百位胆码是1，这时就可以在百位框中填写1，如果是每一位都可能出的话，那就需要在百位，十位，个位上选中此胆号了，并且没被点中的号将被去掉。
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    和值过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">4、和值过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_511' id='FilterName_511_0' type='radio' value='排除选中' />
+                        <label for='FilterName_511_0'>
+                            排除选中
+                        </label>
+                        <input name='FilterName_511' id='FilterName_511_1' type='radio' value='包含选中' checked>
+                        <label for='FilterName_511_1' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">00</span>
+                        <span class="frame white">01</span>
+                        <span class="frame white">02</span>
+                        <span class="frame white">03</span>
+                        <span class="frame white">04</span>
+                        <span class="frame white">05</span>
+                        <span class="frame white">06</span>
+                        <span class="frame white">07</span>
+                        <span class="frame white">08</span>
+                        <span class="frame white">09</span>
+                        <br />
+                        <span class="frame white">10</span>
+                        <span class="frame white">11</span>
+                        <span class="frame white">12</span>
+                        <span class="frame white">13</span>
+                        <span class="frame white">14</span>
+                        <span class="frame white">15</span>
+                        <span class="frame white">16</span>
+                        <span class="frame white">17</span>
+                        <span class="frame white">18</span>
+                        <span class="frame white">19</span>
+                        <br />
+                        <span class="frame white">20</span>
+                        <span class="frame white">21</span>
+                        <span class="frame white">22</span>
+                        <span class="frame white">23</span>
+                        <span class="frame white">24</span>
+                        <span class="frame white">25</span>
+                        <span class="frame white">26</span>
+                        <span class="frame white">27</span>
+                        <input type="hidden" name="FilterName_512" id="FilterName_512" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    和值为开奖号三数之和，变化范围：0～27
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    跨度过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">5、跨度过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_514' id='FilterName_514_0' type='radio' value='排除选中' />
+                        <label for='FilterName_514_0'>
+                            排除选中
+                        </label>
+                        <input name='FilterName_514' id='FilterName_514_1' type='radio' value='包含选中' checked>
+                        <label for='FilterName_514_1' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white">0</span>
+                        <span class="frame white">1</span>
+                        <span class="frame white">2</span>
+                        <span class="frame white">3</span>
+                        <span class="frame white">4</span>
+                        <span class="frame white">5</span>
+                        <span class="frame white">6</span>
+                        <span class="frame white">7</span>
+                        <span class="frame white">8</span>
+                        <span class="frame white">9</span>
+                        <input type="hidden" name="FilterName_515" id="FilterName_515" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    开奖号中最大数与最小数的差值
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    大小过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">6、大小过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_517' id='FilterName_517_0' type='radio' value='排除选中' />
+                        <label for='FilterName_517_0'>
+                            排除选中
+                        </label>
+                        <input name='FilterName_517' id='FilterName_517_1' type='radio' value='包含选中' checked>
+                        <label for='FilterName_517_1' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">大大大</span>
+                        <span class="frame white-80">大大小</span>
+                        <span class="frame white-80">大小大</span>
+                        <span class="frame white-80">小大大</span>
+                        <br />
+                        <span class="frame white-80">小小小</span>
+                        <span class="frame white-80">小小大</span>
+                        <span class="frame white-80">小大小</span>
+                        <span class="frame white-80">大小小</span>
+                        <input type="hidden" name="FilterName_518" id="FilterName_518" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    约定56789为大、01234为小
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    奇偶过滤
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">7、奇偶过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_520' id='FilterName_520_0' type='radio' value='排除选中' />
+                        <label for='FilterName_520_0'>
+                            排除选中
+                        </label>
+                        <input name='FilterName_520' id='FilterName_520_1' type='radio' value='包含选中' checked>
+                        <label for='FilterName_520_1' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">奇奇奇</span>
+                        <span class="frame white-80">奇奇偶</span>
+                        <span class="frame white-80">奇偶奇</span>
+                        <span class="frame white-80">偶奇奇</span>
+                        <br />
+                        <span class="frame white-80">偶偶偶</span>
+                        <span class="frame white-80">偶偶奇</span>
+                        <span class="frame white-80">偶奇偶</span>
+                        <span class="frame white-80">奇偶偶</span>
+                        <input type="hidden" name="FilterName_521" id="FilterName_521" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three">
+                <p>
+                    奇：13579、偶：02468
+                <p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="grey-one">
+                <div align="center">
+                    质合过滤
+                </div>
+            </td>
+            <td class="grey-two">
+                <ul class="list">
+                    <li class="bold">8、质合过滤 </li>
+                    <li class="radio">
+                        <input name='FilterName_523' id='FilterName_523_0' type='radio' value='排除选中' />
+                        <label for='FilterName_523_0'>
+                            排除选中
+                        </label>
+                        <input name='FilterName_523' id='FilterName_523_1' type='radio' value='包含选中' checked>
+                        <label for='FilterName_523_1' class='red-text'>
+                            包含选中
+                        </label>
+                    </li>
+                    <li class="framebox">
+                        <span class="frame white-80">质质质</span>
+                        <span class="frame white-80">质质合</span>
+                        <span class="frame white-80">质合质</span>
+                        <span class="frame white-80">合质质</span>
+                        <br />
+                        <span class="frame white-80">合合合</span>
+                        <span class="frame white-80">合合质</span>
+                        <span class="frame white-80">合质合</span>
+                        <span class="frame white-80">质合合</span>
+                        <input type="hidden" name="FilterName_524" id="FilterName_524" />
+                    </li>
+                    <li class="but">
+                        <span class="true">全选</span>
+                        <span class="false">取消</span>
+                    </li>
+                </ul>
+            </td>
+            <td class="grey-three">
+                <p>
+                    约定12357为质、04689为合
+                </p>
+            </td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one">
+                <div align="center">
+                    组合选项
+                </div>
+            </td>
+            <td class="blue-two">
+                <ul class="list">
+                    <li class="bold">9、组合选项 </li>
+                    <li>
+                        <input name="zuhe" value="直选" onclick="Czuhe('zuxun');" checked="checked" id="zuhe1" type="radio" />
+                        <label for="zuhe1" class="bold">
+                            直选
+                        </label>
+                    </li>
+                    <li class="zuxun">
+                        <label>
+                            包含：
+                        </label>
+                        <input name="zuhe3" value="组三" id="zuhe3" checked="checked" type="checkbox" />
+                        <label for="zuhe3">
+                            组三
+                        </label>
+                        <input name="zuhe6" value="组六" id="zuhe6" checked="checked" type="checkbox" />
+                        <label for="zuhe6">
+                            组六
+                        </label>
+                        <input name="baozi" value="豹子" id="baozi" checked="checked" type="checkbox" />
+                        <label for="baozi">
+                            豹子
+                        </label>
+                    </li>
+                    <li>
+                        <input name="zuhe" value="组选" id="zuhe2" onclick="Czuhe('zuxun');" type="radio" />
+                        <label for="zuhe2" class="bold">
+                            组选
+                        </label>
+                    </li>
+                </ul>
+            </td>
+            <td class="blue-three"></td>
+        </tr>
+        <tr height="5"></tr>
+        <tr>
+            <td class="blue-one" colspan="3" style="width:100%;">
+                <div class="but_1">
+                    <input name="imageField" id="imageField" type="image" src="/static/images/kjss.gif" />
+                    <input name="imageField3" id="resetImage" type="image" src="/static/images/resetss.gif" class="last" />
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

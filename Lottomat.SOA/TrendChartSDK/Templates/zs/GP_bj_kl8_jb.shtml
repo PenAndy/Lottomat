@@ -1,0 +1,501 @@
+﻿<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine1" checked="checked" autocomplete="off" /><label for="ctl_foldLine1">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss1" autocomplete="off" /><label for="ctl_miss1">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss1" autocomplete="off" /><label for="ctl_sliceMiss1">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat1" autocomplete="off" /><label for="ctl_repeat1">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near1" autocomplete="off" /><label for="ctl_near1">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump1" autocomplete="off" /><label for="ctl_jump1">跳号</label></span>
+</div>
+<!--走势图功能选择部分 end-->
+<!--数据体部分 begin-->
+<div style="width:1200px;overflow-x:scroll;">
+    <table class="chartTable" id="chartBody" style="width:2154px;">
+        <thead>
+            <tr>
+                <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+                <th colspan="6">快乐飞盘</th>
+                <th colspan="40">号码分布</th>
+                <th colspan="40">号码分布</th>
+            </tr>
+            <tr>
+                <th width="20">01</th>
+                <th width="20">02</th>
+                <th width="20">03</th>
+                <th width="20">04</th>
+                <th width="20">05</th>
+                <th width="20">10</th>
+                <th width="20">01</th>
+                <th width="20">02</th>
+                <th width="20">03</th>
+                <th width="20">04</th>
+                <th width="20">05</th>
+                <th width="20">06</th>
+                <th width="20">07</th>
+                <th width="20">08</th>
+                <th width="20">09</th>
+                <th width="20">10</th>
+                <th width="20">11</th>
+                <th width="20">12</th>
+                <th width="20">13</th>
+                <th width="20">14</th>
+                <th width="20">15</th>
+                <th width="20">16</th>
+                <th width="20">17</th>
+                <th width="20">18</th>
+                <th width="20">19</th>
+                <th width="20">20</th>
+                <th width="20">21</th>
+                <th width="20">22</th>
+                <th width="20">23</th>
+                <th width="20">24</th>
+                <th width="20">25</th>
+                <th width="20">26</th>
+                <th width="20">27</th>
+                <th width="20">28</th>
+                <th width="20">29</th>
+                <th width="20">30</th>
+                <th width="20">31</th>
+                <th width="20">32</th>
+                <th width="20">33</th>
+                <th width="20">34</th>
+                <th width="20">35</th>
+                <th width="20">36</th>
+                <th width="20">37</th>
+                <th width="20">38</th>
+                <th width="20">39</th>
+                <th width="20">40</th>
+                <th width="20">41</th>
+                <th width="20">42</th>
+                <th width="20">43</th>
+                <th width="20">44</th>
+                <th width="20">45</th>
+                <th width="20">46</th>
+                <th width="20">47</th>
+                <th width="20">48</th>
+                <th width="20">49</th>
+                <th width="20">50</th>
+                <th width="20">51</th>
+                <th width="20">52</th>
+                <th width="20">53</th>
+                <th width="20">54</th>
+                <th width="20">55</th>
+                <th width="20">56</th>
+                <th width="20">57</th>
+                <th width="20">58</th>
+                <th width="20">59</th>
+                <th width="20">60</th>
+                <th width="20">61</th>
+                <th width="20">62</th>
+                <th width="20">63</th>
+                <th width="20">64</th>
+                <th width="20">65</th>
+                <th width="20">66</th>
+                <th width="20">67</th>
+                <th width="20">68</th>
+                <th width="20">69</th>
+                <th width="20">70</th>
+                <th width="20">71</th>
+                <th width="20">72</th>
+                <th width="20">73</th>
+                <th width="20">74</th>
+                <th width="20">75</th>
+                <th width="20">76</th>
+                <th width="20">77</th>
+                <th width="20">78</th>
+                <th width="20">79</th>
+                <th width="20">80</th>
+            </tr>
+        </thead>
+        <tbody id="chartData">
+            <!--@@chartData-->
+        </tbody>
+        <!--模拟选号框-->
+        <tbody id="preseleBody">
+            <tr class="presele">
+                <td class="presele-title"><strong>选号1</strong></td>
+                <td class="presele-ball" pl="blue">01</td>
+                <td class="presele-ball" pl="blue">02</td>
+                <td class="presele-ball" pl="blue">03</td>
+                <td class="presele-ball" pl="blue">04</td>
+                <td class="presele-ball" pl="blue">05</td>
+                <td class="presele-ball" pl="blue">10</td>
+                <td class="presele-ball" pl="red">01</td>
+                <td class="presele-ball" pl="red">02</td>
+                <td class="presele-ball" pl="red">03</td>
+                <td class="presele-ball" pl="red">04</td>
+                <td class="presele-ball" pl="red">05</td>
+                <td class="presele-ball" pl="red">06</td>
+                <td class="presele-ball" pl="red">07</td>
+                <td class="presele-ball" pl="red">08</td>
+                <td class="presele-ball" pl="red">09</td>
+                <td class="presele-ball" pl="red">10</td>
+                <td class="presele-ball" pl="red">11</td>
+                <td class="presele-ball" pl="red">12</td>
+                <td class="presele-ball" pl="red">13</td>
+                <td class="presele-ball" pl="red">14</td>
+                <td class="presele-ball" pl="red">15</td>
+                <td class="presele-ball" pl="red">16</td>
+                <td class="presele-ball" pl="red">17</td>
+                <td class="presele-ball" pl="red">18</td>
+                <td class="presele-ball" pl="red">19</td>
+                <td class="presele-ball" pl="red">20</td>
+                <td class="presele-ball" pl="red">21</td>
+                <td class="presele-ball" pl="red">22</td>
+                <td class="presele-ball" pl="red">23</td>
+                <td class="presele-ball" pl="red">24</td>
+                <td class="presele-ball" pl="red">25</td>
+                <td class="presele-ball" pl="red">26</td>
+                <td class="presele-ball" pl="red">27</td>
+                <td class="presele-ball" pl="red">28</td>
+                <td class="presele-ball" pl="red">29</td>
+                <td class="presele-ball" pl="red">30</td>
+                <td class="presele-ball" pl="red">31</td>
+                <td class="presele-ball" pl="red">32</td>
+                <td class="presele-ball" pl="red">33</td>
+                <td class="presele-ball" pl="red">34</td>
+                <td class="presele-ball" pl="red">35</td>
+                <td class="presele-ball" pl="red">36</td>
+                <td class="presele-ball" pl="red">37</td>
+                <td class="presele-ball" pl="red">38</td>
+                <td class="presele-ball" pl="red">39</td>
+                <td class="presele-ball" pl="red">40</td>
+                <td class="presele-ball" pl="red">41</td>
+                <td class="presele-ball" pl="red">42</td>
+                <td class="presele-ball" pl="red">43</td>
+                <td class="presele-ball" pl="red">44</td>
+                <td class="presele-ball" pl="red">45</td>
+                <td class="presele-ball" pl="red">46</td>
+                <td class="presele-ball" pl="red">47</td>
+                <td class="presele-ball" pl="red">48</td>
+                <td class="presele-ball" pl="red">49</td>
+                <td class="presele-ball" pl="red">50</td>
+                <td class="presele-ball" pl="red">51</td>
+                <td class="presele-ball" pl="red">52</td>
+                <td class="presele-ball" pl="red">53</td>
+                <td class="presele-ball" pl="red">54</td>
+                <td class="presele-ball" pl="red">55</td>
+                <td class="presele-ball" pl="red">56</td>
+                <td class="presele-ball" pl="red">57</td>
+                <td class="presele-ball" pl="red">58</td>
+                <td class="presele-ball" pl="red">59</td>
+                <td class="presele-ball" pl="red">60</td>
+                <td class="presele-ball" pl="red">61</td>
+                <td class="presele-ball" pl="red">62</td>
+                <td class="presele-ball" pl="red">63</td>
+                <td class="presele-ball" pl="red">64</td>
+                <td class="presele-ball" pl="red">65</td>
+                <td class="presele-ball" pl="red">66</td>
+                <td class="presele-ball" pl="red">67</td>
+                <td class="presele-ball" pl="red">68</td>
+                <td class="presele-ball" pl="red">69</td>
+                <td class="presele-ball" pl="red">70</td>
+                <td class="presele-ball" pl="red">71</td>
+                <td class="presele-ball" pl="red">72</td>
+                <td class="presele-ball" pl="red">73</td>
+                <td class="presele-ball" pl="red">74</td>
+                <td class="presele-ball" pl="red">75</td>
+                <td class="presele-ball" pl="red">76</td>
+                <td class="presele-ball" pl="red">77</td>
+                <td class="presele-ball" pl="red">78</td>
+                <td class="presele-ball" pl="red">79</td>
+                <td class="presele-ball" pl="red">80</td>
+            </tr>
+            <tr class="presele">
+                <td class="presele-title"><span>选号2</span></td>
+                <td class="presele-ball" pl="blue">01</td>
+                <td class="presele-ball" pl="blue">02</td>
+                <td class="presele-ball" pl="blue">03</td>
+                <td class="presele-ball" pl="blue">04</td>
+                <td class="presele-ball" pl="blue">05</td>
+                <td class="presele-ball" pl="blue">10</td>
+                <td class="presele-ball" pl="red">01</td>
+                <td class="presele-ball" pl="red">02</td>
+                <td class="presele-ball" pl="red">03</td>
+                <td class="presele-ball" pl="red">04</td>
+                <td class="presele-ball" pl="red">05</td>
+                <td class="presele-ball" pl="red">06</td>
+                <td class="presele-ball" pl="red">07</td>
+                <td class="presele-ball" pl="red">08</td>
+                <td class="presele-ball" pl="red">09</td>
+                <td class="presele-ball" pl="red">10</td>
+                <td class="presele-ball" pl="red">11</td>
+                <td class="presele-ball" pl="red">12</td>
+                <td class="presele-ball" pl="red">13</td>
+                <td class="presele-ball" pl="red">14</td>
+                <td class="presele-ball" pl="red">15</td>
+                <td class="presele-ball" pl="red">16</td>
+                <td class="presele-ball" pl="red">17</td>
+                <td class="presele-ball" pl="red">18</td>
+                <td class="presele-ball" pl="red">19</td>
+                <td class="presele-ball" pl="red">20</td>
+                <td class="presele-ball" pl="red">21</td>
+                <td class="presele-ball" pl="red">22</td>
+                <td class="presele-ball" pl="red">23</td>
+                <td class="presele-ball" pl="red">24</td>
+                <td class="presele-ball" pl="red">25</td>
+                <td class="presele-ball" pl="red">26</td>
+                <td class="presele-ball" pl="red">27</td>
+                <td class="presele-ball" pl="red">28</td>
+                <td class="presele-ball" pl="red">29</td>
+                <td class="presele-ball" pl="red">30</td>
+                <td class="presele-ball" pl="red">31</td>
+                <td class="presele-ball" pl="red">32</td>
+                <td class="presele-ball" pl="red">33</td>
+                <td class="presele-ball" pl="red">34</td>
+                <td class="presele-ball" pl="red">35</td>
+                <td class="presele-ball" pl="red">36</td>
+                <td class="presele-ball" pl="red">37</td>
+                <td class="presele-ball" pl="red">38</td>
+                <td class="presele-ball" pl="red">39</td>
+                <td class="presele-ball" pl="red">40</td>
+                <td class="presele-ball" pl="red">41</td>
+                <td class="presele-ball" pl="red">42</td>
+                <td class="presele-ball" pl="red">43</td>
+                <td class="presele-ball" pl="red">44</td>
+                <td class="presele-ball" pl="red">45</td>
+                <td class="presele-ball" pl="red">46</td>
+                <td class="presele-ball" pl="red">47</td>
+                <td class="presele-ball" pl="red">48</td>
+                <td class="presele-ball" pl="red">49</td>
+                <td class="presele-ball" pl="red">50</td>
+                <td class="presele-ball" pl="red">51</td>
+                <td class="presele-ball" pl="red">52</td>
+                <td class="presele-ball" pl="red">53</td>
+                <td class="presele-ball" pl="red">54</td>
+                <td class="presele-ball" pl="red">55</td>
+                <td class="presele-ball" pl="red">56</td>
+                <td class="presele-ball" pl="red">57</td>
+                <td class="presele-ball" pl="red">58</td>
+                <td class="presele-ball" pl="red">59</td>
+                <td class="presele-ball" pl="red">60</td>
+                <td class="presele-ball" pl="red">61</td>
+                <td class="presele-ball" pl="red">62</td>
+                <td class="presele-ball" pl="red">63</td>
+                <td class="presele-ball" pl="red">64</td>
+                <td class="presele-ball" pl="red">65</td>
+                <td class="presele-ball" pl="red">66</td>
+                <td class="presele-ball" pl="red">67</td>
+                <td class="presele-ball" pl="red">68</td>
+                <td class="presele-ball" pl="red">69</td>
+                <td class="presele-ball" pl="red">70</td>
+                <td class="presele-ball" pl="red">71</td>
+                <td class="presele-ball" pl="red">72</td>
+                <td class="presele-ball" pl="red">73</td>
+                <td class="presele-ball" pl="red">74</td>
+                <td class="presele-ball" pl="red">75</td>
+                <td class="presele-ball" pl="red">76</td>
+                <td class="presele-ball" pl="red">77</td>
+                <td class="presele-ball" pl="red">78</td>
+                <td class="presele-ball" pl="red">79</td>
+                <td class="presele-ball" pl="red">80</td>
+            </tr>
+            <tr class="presele">
+                <td class="presele-title"><span>选号3</span></td>
+                <td class="presele-ball" pl="blue">01</td>
+                <td class="presele-ball" pl="blue">02</td>
+                <td class="presele-ball" pl="blue">03</td>
+                <td class="presele-ball" pl="blue">04</td>
+                <td class="presele-ball" pl="blue">05</td>
+                <td class="presele-ball" pl="blue">10</td>
+                <td class="presele-ball" pl="red">01</td>
+                <td class="presele-ball" pl="red">02</td>
+                <td class="presele-ball" pl="red">03</td>
+                <td class="presele-ball" pl="red">04</td>
+                <td class="presele-ball" pl="red">05</td>
+                <td class="presele-ball" pl="red">06</td>
+                <td class="presele-ball" pl="red">07</td>
+                <td class="presele-ball" pl="red">08</td>
+                <td class="presele-ball" pl="red">09</td>
+                <td class="presele-ball" pl="red">10</td>
+                <td class="presele-ball" pl="red">11</td>
+                <td class="presele-ball" pl="red">12</td>
+                <td class="presele-ball" pl="red">13</td>
+                <td class="presele-ball" pl="red">14</td>
+                <td class="presele-ball" pl="red">15</td>
+                <td class="presele-ball" pl="red">16</td>
+                <td class="presele-ball" pl="red">17</td>
+                <td class="presele-ball" pl="red">18</td>
+                <td class="presele-ball" pl="red">19</td>
+                <td class="presele-ball" pl="red">20</td>
+                <td class="presele-ball" pl="red">21</td>
+                <td class="presele-ball" pl="red">22</td>
+                <td class="presele-ball" pl="red">23</td>
+                <td class="presele-ball" pl="red">24</td>
+                <td class="presele-ball" pl="red">25</td>
+                <td class="presele-ball" pl="red">26</td>
+                <td class="presele-ball" pl="red">27</td>
+                <td class="presele-ball" pl="red">28</td>
+                <td class="presele-ball" pl="red">29</td>
+                <td class="presele-ball" pl="red">30</td>
+                <td class="presele-ball" pl="red">31</td>
+                <td class="presele-ball" pl="red">32</td>
+                <td class="presele-ball" pl="red">33</td>
+                <td class="presele-ball" pl="red">34</td>
+                <td class="presele-ball" pl="red">35</td>
+                <td class="presele-ball" pl="red">36</td>
+                <td class="presele-ball" pl="red">37</td>
+                <td class="presele-ball" pl="red">38</td>
+                <td class="presele-ball" pl="red">39</td>
+                <td class="presele-ball" pl="red">40</td>
+                <td class="presele-ball" pl="red">41</td>
+                <td class="presele-ball" pl="red">42</td>
+                <td class="presele-ball" pl="red">43</td>
+                <td class="presele-ball" pl="red">44</td>
+                <td class="presele-ball" pl="red">45</td>
+                <td class="presele-ball" pl="red">46</td>
+                <td class="presele-ball" pl="red">47</td>
+                <td class="presele-ball" pl="red">48</td>
+                <td class="presele-ball" pl="red">49</td>
+                <td class="presele-ball" pl="red">50</td>
+                <td class="presele-ball" pl="red">51</td>
+                <td class="presele-ball" pl="red">52</td>
+                <td class="presele-ball" pl="red">53</td>
+                <td class="presele-ball" pl="red">54</td>
+                <td class="presele-ball" pl="red">55</td>
+                <td class="presele-ball" pl="red">56</td>
+                <td class="presele-ball" pl="red">57</td>
+                <td class="presele-ball" pl="red">58</td>
+                <td class="presele-ball" pl="red">59</td>
+                <td class="presele-ball" pl="red">60</td>
+                <td class="presele-ball" pl="red">61</td>
+                <td class="presele-ball" pl="red">62</td>
+                <td class="presele-ball" pl="red">63</td>
+                <td class="presele-ball" pl="red">64</td>
+                <td class="presele-ball" pl="red">65</td>
+                <td class="presele-ball" pl="red">66</td>
+                <td class="presele-ball" pl="red">67</td>
+                <td class="presele-ball" pl="red">68</td>
+                <td class="presele-ball" pl="red">69</td>
+                <td class="presele-ball" pl="red">70</td>
+                <td class="presele-ball" pl="red">71</td>
+                <td class="presele-ball" pl="red">72</td>
+                <td class="presele-ball" pl="red">73</td>
+                <td class="presele-ball" pl="red">74</td>
+                <td class="presele-ball" pl="red">75</td>
+                <td class="presele-ball" pl="red">76</td>
+                <td class="presele-ball" pl="red">77</td>
+                <td class="presele-ball" pl="red">78</td>
+                <td class="presele-ball" pl="red">79</td>
+                <td class="presele-ball" pl="red">80</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--数据体部分 end-->
+<div class="ctl-box">
+    标注形式选择：
+    <span class="ctl-item"><input type="checkbox" name="ctl_foldLine" id="ctl_foldLine2" checked="checked" autocomplete="off" /><label for="ctl_foldLine2">折线</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_miss" id="ctl_miss2" autocomplete="off" /><label for="ctl_miss2">不带遗漏数据</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_sliceMiss" id="ctl_sliceMiss2" autocomplete="off" /><label for="ctl_sliceMiss2">遗漏分层</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_repeat" id="ctl_repeat2" autocomplete="off" /><label for="ctl_repeat2">重号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_near" id="ctl_near2" autocomplete="off" /><label for="ctl_near2">邻号</label></span>
+    <span class="ctl-item"><input type="checkbox" name="ctl_jump" id="ctl_jump2" autocomplete="off" /><label for="ctl_jump2">跳号</label></span>
+</div>
+<div class="dataAnalysisBox">
+    <strong>数据分析</strong>
+    <input name="analysisbtn" id="currentAnalysis" checked="checked" type="radio" autocomplete="off" />
+    <label for="currentAnalysis">当前页统计</label>
+</div>
+<!--数据统计部分 beign-->
+<div style="width:1200px;overflow-x:scroll;">
+    <table class="staticTable" style="width:2154px;">
+        <thead>
+            <tr>
+                <th width="84" rowspan="2" class="sort_up"><strong>期号</strong></th>
+                <th colspan="6">快乐飞盘</th>
+                <th colspan="80">号码分布</th>
+            </tr>
+            <tr>
+                <th width="20">01</th>
+                <th width="20">02</th>
+                <th width="20">03</th>
+                <th width="20">04</th>
+                <th width="20">05</th>
+                <th width="20">10</th>
+                <th width="20">01</th>
+                <th width="20">02</th>
+                <th width="20">03</th>
+                <th width="20">04</th>
+                <th width="20">05</th>
+                <th width="20">06</th>
+                <th width="20">07</th>
+                <th width="20">08</th>
+                <th width="20">09</th>
+                <th width="20">10</th>
+                <th width="20">11</th>
+                <th width="20">12</th>
+                <th width="20">13</th>
+                <th width="20">14</th>
+                <th width="20">15</th>
+                <th width="20">16</th>
+                <th width="20">17</th>
+                <th width="20">18</th>
+                <th width="20">19</th>
+                <th width="20">20</th>
+                <th width="20">21</th>
+                <th width="20">22</th>
+                <th width="20">23</th>
+                <th width="20">24</th>
+                <th width="20">25</th>
+                <th width="20">26</th>
+                <th width="20">27</th>
+                <th width="20">28</th>
+                <th width="20">29</th>
+                <th width="20">30</th>
+                <th width="20">31</th>
+                <th width="20">32</th>
+                <th width="20">33</th>
+                <th width="20">34</th>
+                <th width="20">35</th>
+                <th width="20">36</th>
+                <th width="20">37</th>
+                <th width="20">38</th>
+                <th width="20">39</th>
+                <th width="20">40</th>
+                <th width="20">41</th>
+                <th width="20">42</th>
+                <th width="20">43</th>
+                <th width="20">44</th>
+                <th width="20">45</th>
+                <th width="20">46</th>
+                <th width="20">47</th>
+                <th width="20">48</th>
+                <th width="20">49</th>
+                <th width="20">50</th>
+                <th width="20">51</th>
+                <th width="20">52</th>
+                <th width="20">53</th>
+                <th width="20">54</th>
+                <th width="20">55</th>
+                <th width="20">56</th>
+                <th width="20">57</th>
+                <th width="20">58</th>
+                <th width="20">59</th>
+                <th width="20">60</th>
+                <th width="20">61</th>
+                <th width="20">62</th>
+                <th width="20">63</th>
+                <th width="20">64</th>
+                <th width="20">65</th>
+                <th width="20">66</th>
+                <th width="20">67</th>
+                <th width="20">68</th>
+                <th width="20">69</th>
+                <th width="20">70</th>
+                <th width="20">71</th>
+                <th width="20">72</th>
+                <th width="20">73</th>
+                <th width="20">74</th>
+                <th width="20">75</th>
+                <th width="20">76</th>
+                <th width="20">77</th>
+                <th width="20">78</th>
+                <th width="20">79</th>
+                <th width="20">80</th>
+            </tr>
+        </thead>
+        <!--@@localMissData-->
+        <!--@@missData-->
+    </table>
+</div>
